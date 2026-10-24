@@ -4,8 +4,9 @@ See the LinkedIn article and post copy in the marketing kit (article/linkedin.md
 Harvey made 36 tailored product films in 69 minutes with Figma, Figma Motion, Figma Weave, ElevenLabs and a
 750-line film engine.
 
-I rebuilt their pipeline with IMG.LY CoDesign and no dev team: 42 films, the last 30 in 18 minutes.
-Everything is open, so you can reproduce it yourself.
+I rebuilt their pipeline with IMG.LY CoDesign as the only design tool (voice and music through its built-in AI
+gateway) and no dev team: 42 films, the last 30 in 18 minutes across five agent lanes. Not like for like (fictional
+brand, hand-written account research), but everything is open, so you can check it yourself.
 
 Harvey: lovely pipeline. Your move. 😉
 Everyone else: build your own. Recipe: github.com/imgly-labs/codesign-harvey-pipeline · Try it: codesign.co
@@ -13,8 +14,8 @@ Everyone else: build your own. Recipe: github.com/imgly-labs/codesign-harvey-pip
 === X / Threads ===
 Harvey's team made 36 tailored product films in 69 min with Figma + Motion + Weave + ElevenLabs + ~750 lines of JS.
 
-We rebuilt it with CoDesign: 42 tailored films, the last 30 in 18 min, 5 agent lanes, voice, music,
-captions, QA. All open.
+We rebuilt it with CoDesign as the only design tool: 42 tailored films, the last 30 in 18 min across 5 agent lanes.
+Fictional brand, so not like for like, but all open.
 
 Harvey [tag their handle]: lovely pipeline. Your move.
 Recipe: github.com/imgly-labs/codesign-harvey-pipeline · Try it: codesign.co
@@ -29,5 +30,5 @@ codesign.co.
 === Fine print for any post ===
 Quillon and all accounts are fictional. No Harvey footage, UI, logo or voice was used. Harvey's numbers are quoted
 from their post. Ours are wall-clock: batch 1 (12 films) 2026-10-23 16:00 → 16:19 including a fix-and-rebuild pass;
-batch 2 (30 films) 2026-10-24 14:37:50 → 14:55:45, from the first lane prompt to the last mp4. Our films run 35–48 s;
+batch 2 (30 films) 2026-10-24 14:37:50 → 14:55:45, from the first lane prompt to the last mp4. Our films run 35–48 s (batch 2: 41–47 s);
 Harvey's post doesn't give theirs, so the numbers are side by side, not a race.
