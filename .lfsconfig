@@ -1,0 +1,4 @@
+[lfs]
+	# Large files live on IMG.LY Labs' LFS server; public repos download anonymously.
+	url = https://lfs.imgly.dev/codesign-harvey-pipeline
+	locksverify = false

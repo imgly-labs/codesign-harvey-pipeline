@@ -1,0 +1,1 @@
+castell-pharma | Castell Pharma | chronology, assistant-cited, outlook-reply | done (rebuilt, fixed engine + flows: CTA fade, chronology reframed; no in-film workaround) | 34.8 s | films/castell-pharma/castell-pharma.mp4 | 16:18–16:18 | flags: none; audioDuration 34.816 ≈ 34.8; imgly 4.3 MB (not re-saved after contact sheet)

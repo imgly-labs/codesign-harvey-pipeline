@@ -1,0 +1,137 @@
+{
+ "_doc": "Company-agnostic flow menu (Harvey: 44 flows/13 categories; pilot: 7 flows/5 categories). Coordinates are in 1600x1000 screen space; 2x PNGs are 3200x2000. detail = 16:9 region for the punch-in shot; click = pointer target or null.",
+ "screens": {
+  "s1": {
+   "uri": "workspace://assets/d6251a9c5df8.png",
+   "path": "product-map/2x/s1-assistant.png"
+  },
+  "s2": {
+   "uri": "workspace://assets/8b9bc22e79d6.png",
+   "path": "product-map/2x/s2-answer.png"
+  },
+  "s3": {
+   "uri": "workspace://assets/01d40f8eb595.png",
+   "path": "product-map/2x/s3-vault.png"
+  },
+  "s4": {
+   "uri": "workspace://assets/3c612edb9363.png",
+   "path": "product-map/2x/s4-word.png"
+  },
+  "s5": {
+   "uri": "workspace://assets/4571516a8610.png",
+   "path": "product-map/2x/s5-chronology.png"
+  },
+  "s6": {
+   "uri": "workspace://assets/83bca6db8fde.png",
+   "path": "product-map/2x/s6-outlook.png"
+  },
+  "s7": {
+   "uri": "workspace://assets/0a46219483df.png",
+   "path": "product-map/2x/s7-playbook.png"
+  }
+ },
+ "flows": {
+  "assistant-ask": {
+   "category": "Assistant",
+   "screen": "s1",
+   "label": "Ask across a whole matter",
+   "detail": {
+    "x": 480,
+    "y": 200,
+    "w": 1120,
+    "h": 630
+   },
+   "click": [
+    1440,
+    458
+   ]
+  },
+  "assistant-cited": {
+   "category": "Assistant",
+   "screen": "s2",
+   "label": "Answers cited to the page",
+   "detail": {
+    "x": 300,
+    "y": 120,
+    "w": 1280,
+    "h": 720
+   },
+   "click": [
+    1300,
+    210
+   ]
+  },
+  "vault-review": {
+   "category": "Contract work",
+   "screen": "s3",
+   "label": "Review every document at once",
+   "detail": {
+    "x": 900,
+    "y": 250,
+    "w": 690,
+    "h": 388
+   },
+   "click": [
+    1290,
+    366
+   ]
+  },
+  "word-redline": {
+   "category": "Word and Outlook",
+   "screen": "s4",
+   "label": "Redlines in Word, to your playbook",
+   "detail": {
+    "x": 160,
+    "y": 140,
+    "w": 1400,
+    "h": 788
+   },
+   "click": [
+    1130,
+    492
+   ]
+  },
+  "chronology": {
+   "category": "Litigation",
+   "screen": "s5",
+   "label": "Chronologies from the exhibits",
+   "detail": {
+    "x": 300,
+    "y": 330,
+    "w": 860,
+    "h": 484
+   },
+   "click": [
+    592,
+    712
+   ]
+  },
+  "outlook-reply": {
+   "category": "Word and Outlook",
+   "screen": "s6",
+   "label": "Replies drafted in Outlook",
+   "detail": {
+    "x": 900,
+    "y": 200,
+    "w": 700,
+    "h": 394
+   },
+   "click": [
+    1180,
+    502
+   ]
+  },
+  "playbook-memory": {
+   "category": "Memory",
+   "screen": "s7",
+   "label": "Your firm’s positions, remembered",
+   "detail": {
+    "x": 296,
+    "y": 110,
+    "w": 1000,
+    "h": 563
+   },
+   "click": null
+  }
+ }
+}

@@ -1,0 +1,15 @@
+{"grid":0.6,"lead":0.4,"tail":0.5,
+ "music":{"uri":"workspace://assets/02506e85b455.m4a","dur":53.035,"bpm":100,"model":"@falai/sonilo/v1.1/text-to-music","dropRequested":26.4},
+ "sfx":{"whoosh":{"uri":"workspace://assets/649d0b22b966.mp3","dur":0.836},"hit":{"uri":"workspace://assets/2ff02fb13c12.mp3","dur":1.515}},
+ "vo":[
+  {"beat":"b1","uri":"workspace://assets/71ad9c73947a.mp3","dur":2.926,"text":"A client alert is not a chat answer."},
+  {"beat":"b2","uri":"workspace://assets/88c6f5d0c246.mp3","dur":5.956,"text":"Quillon already finds the answer. Then someone spends the evening formatting it."},
+  {"beat":"b3","uri":"workspace://assets/e17aa16e98b0.mp3","dur":2.508,"text":"Now Quillon writes the document itself."},
+  {"beat":"b4","uri":"workspace://assets/a8d9498e2495.mp3","dur":5.407,"text":"Ask for a two-page client alert on the Meridian facilities, in your firm's style."},
+  {"beat":"b5","uri":null,"dur":0,"text":""},
+  {"beat":"b6","uri":"workspace://assets/059627bb126b.mp3","dur":6.426,"text":"Forty-one seconds later: letterhead, defined terms, every sentence footnoted."},
+  {"beat":"b7","uri":"workspace://assets/ac185f3e1c94.mp3","dur":4.754,"text":"The same matter becomes a board memo, or a chronology exhibit."},
+  {"beat":"b8","uri":"workspace://assets/8a378e9b523e.mp3","dur":4.362,"text":"Open it in Word, styles intact, ready for the partner's pen."},
+  {"beat":"b9","uri":"workspace://assets/5d73da7faae0.mp3","dur":3.396,"text":"Quillon Briefs. Send the document, not the answer."}
+ ],
+ "unused_takes":["workspace://assets/fd5a812ec5b5.mp3","workspace://assets/15b5f164e098.mp3","workspace://assets/80af925fa0a1.mp3","workspace://assets/b6c4216114ad.mp3","workspace://assets/59084fde1152.mp3"]}

@@ -1,0 +1,1 @@
+blog | lane E | templates + 3 requests | done | templates.imgly; r1-hero.png/.imgly; r2-chart.png/.imgly; r3-guide.pdf (PDF/X-4, A4)/.imgly | 16:00–16:08, fix 16:12–16:28 | all 4 designs judge-passed (scorecard); R1 table = s2 data, R3 note cites § 1.01; review flags in replies.md

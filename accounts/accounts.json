@@ -1,0 +1,243 @@
+{
+ "_doc": "Fictional target accounts. 'notes' stands in for the CRM/call research Harvey pulls via Enterpret (Gong, Salesforce, Slack). The script agent writes title/vo lines from notes + chosen flows. All names are invented.",
+ "accounts": [
+  {
+   "id": "hallbrook-weir",
+   "name": "Hallbrook & Weir",
+   "segment": "Law firm · Real estate group",
+   "ae": "Dana Whitfield",
+   "meeting": "Thu 6 Nov",
+   "notes": "Real estate group reviews ~2,400 leases a quarter for portfolio deals; associates rebuild review tables in Excel; partners want lender-side playbook applied consistently; clients email consent questions daily.",
+   "flows": [
+    "vault-review",
+    "word-redline",
+    "outlook-reply"
+   ],
+   "title": {
+    "eyebrow": "Prepared for Hallbrook & Weir",
+    "headline": "2,400 leases a quarter. One review table.",
+    "accent": "2,400 leases"
+   },
+   "end": {
+    "line": "Quillon for Hallbrook & Weir’s real estate group"
+   },
+   "vo": [
+    "Hallbrook and Weir reviews about twenty-four hundred leases a quarter. Here is what that looks like in Quillon.",
+    "Drop the whole data room into Vault. Every lease is read at once, and change of control comes back flagged.",
+    "In Word, Quillon redlines to your lender-side playbook, so every associate starts from the same position.",
+    "And when the landlord’s counsel emails, the reply is drafted in Outlook, cited to the lease clause.",
+    "Dana will walk your team through it on Thursday the sixth."
+   ]
+  },
+  {
+   "id": "nordvik-bank",
+   "name": "Nordvik Bank",
+   "segment": "In-house legal · Corporate lending",
+   "ae": "Marcus Lindgren",
+   "meeting": "Tue 11 Nov",
+   "notes": "In-house team of 14 negotiates 300+ facility agreements a year; inconsistent cure periods across deals flagged by audit; GC wants positions remembered across matters.",
+   "flows": [
+    "assistant-cited",
+    "word-redline",
+    "playbook-memory"
+   ],
+   "title": {
+    "eyebrow": "Prepared for Nordvik Bank",
+    "headline": "Every facility agreement, held to one playbook.",
+    "accent": "one playbook"
+   },
+   "end": {
+    "line": "Quillon for Nordvik Bank’s lending legal team"
+   },
+   "vo": [
+    "Nordvik Bank’s legal team negotiates more than three hundred facility agreements a year.",
+    "Ask Quillon what triggers a change of control across them, and every answer is cited to the page.",
+    "Redlines in Word follow your positions: fifteen business days to cure, never fewer than ten.",
+    "Those positions live in your playbook, learned from your own closed deals and reviewed by your team.",
+    "Marcus will show your team on Tuesday the eleventh."
+   ]
+  },
+  {
+   "id": "castell-pharma",
+   "name": "Castell Pharma",
+   "segment": "In-house legal · Litigation",
+   "ae": "Priya Raman",
+   "meeting": "Wed 12 Nov",
+   "notes": "Product liability docket with 40k+ exhibits; outside counsel bills for chronology building; head of litigation wants faster first-pass answers for the board.",
+   "flows": [
+    "chronology",
+    "assistant-cited",
+    "outlook-reply"
+   ],
+   "title": {
+    "eyebrow": "Prepared for Castell Pharma",
+    "headline": "Forty thousand exhibits. One chronology.",
+    "accent": "One chronology"
+   },
+   "end": {
+    "line": "Quillon for Castell Pharma’s litigation team"
+   },
+   "vo": [
+    "Castell Pharma’s litigation team works across more than forty thousand exhibits.",
+    "Quillon builds the chronology from them, and every event links back to its exhibit.",
+    "Ask a question for the board, and the answer cites the exact page it came from.",
+    "Then reply to outside counsel from Outlook, with the sources already attached.",
+    "Priya will walk your team through it on Wednesday the twelfth."
+   ]
+  },
+  {
+   "id": "ostrava-ventures",
+   "name": "Ostrava Ventures",
+   "segment": "Fund · Legal & compliance",
+   "ae": "Dana Whitfield",
+   "meeting": "Mon 10 Nov",
+   "notes": "Three-person legal team covering 60 portfolio companies; side letters and SHAs scattered across data rooms; MFN tracking done by hand.",
+   "flows": [
+    "assistant-ask",
+    "vault-review",
+    "playbook-memory"
+   ],
+   "title": {
+    "eyebrow": "Prepared for Ostrava Ventures",
+    "headline": "Sixty portfolio companies. Three lawyers.",
+    "accent": "Three lawyers"
+   },
+   "end": {
+    "line": "Quillon for Ostrava Ventures’ legal team"
+   },
+   "vo": [
+    "Ostrava Ventures covers sixty portfolio companies with a legal team of three.",
+    "Ask one question across every shareholder agreement in a matter, not one file at a time.",
+    "Vault reads every side letter at once and lines up the terms that differ.",
+    "And your fund’s positions are remembered, so the next deal starts where the last one ended.",
+    "Dana will show your team on Monday the tenth."
+   ]
+  },
+  {
+   "id": "brightmoor-energy",
+   "name": "Brightmoor Energy",
+   "segment": "In-house legal · Disputes & contracts",
+   "ae": "Marcus Lindgren",
+   "meeting": "Fri 14 Nov",
+   "notes": "Supply-contract disputes with three EPC contractors; 900 contracts in scope; team redlines variations under time pressure.",
+   "flows": [
+    "chronology",
+    "vault-review",
+    "word-redline"
+   ],
+   "title": {
+    "eyebrow": "Prepared for Brightmoor Energy",
+    "headline": "Three disputes. Nine hundred contracts.",
+    "accent": "Nine hundred contracts"
+   },
+   "end": {
+    "line": "Quillon for Brightmoor Energy’s legal team"
+   },
+   "vo": [
+    "Brightmoor Energy has three contractor disputes running across nine hundred contracts.",
+    "Quillon builds each dispute’s chronology from the record, with every event cited.",
+    "Vault reviews all nine hundred contracts at once for the clauses that matter.",
+    "And variations get redlined in Word to your standard positions.",
+    "Marcus will walk your team through it on Friday the fourteenth."
+   ]
+  },
+  {
+   "id": "pelham-grant",
+   "name": "Pelham Grant",
+   "segment": "Law firm · Commercial litigation",
+   "ae": "Priya Raman",
+   "meeting": "Tue 18 Nov",
+   "notes": "22-lawyer commercial litigation boutique; disclosure reviews run to 200,000 documents; partners still build witness chronologies by hand; client wants first-pass merits answers in days, not weeks.",
+   "flows": [
+    "chronology",
+    "assistant-cited",
+    "playbook-memory"
+   ],
+   "_script": "TODO by lane: title{eyebrow,headline,accent}, end{line}, vo[5] (spoken spelling), captions[5] (written spelling)"
+  },
+  {
+   "id": "kestrelline-logistics",
+   "name": "Kestrelline Logistics",
+   "segment": "In-house legal · Procurement",
+   "ae": "Dana Whitfield",
+   "meeting": "Wed 19 Nov",
+   "notes": "1,100 supplier contracts across 14 countries; procurement emails legal about 60 questions a week; standard positions live in a 40-page PDF nobody reads.",
+   "flows": [
+    "vault-review",
+    "outlook-reply",
+    "playbook-memory"
+   ],
+   "_script": "TODO by lane: title{eyebrow,headline,accent}, end{line}, vo[5] (spoken spelling), captions[5] (written spelling)"
+  },
+  {
+   "id": "aurelia-insurance",
+   "name": "Aurelia Insurance",
+   "segment": "In-house legal · Claims & coverage",
+   "ae": "Marcus Lindgren",
+   "meeting": "Thu 20 Nov",
+   "notes": "Claims legal team writes coverage opinions; policy wordings differ across 30 product lines; coverage questions take 5 working days to answer.",
+   "flows": [
+    "assistant-ask",
+    "assistant-cited",
+    "word-redline"
+   ],
+   "_script": "TODO by lane: title{eyebrow,headline,accent}, end{line}, vo[5] (spoken spelling), captions[5] (written spelling)"
+  },
+  {
+   "id": "marlowe-kent",
+   "name": "Marlowe Kent",
+   "segment": "Law firm · Banking & finance",
+   "ae": "Priya Raman",
+   "meeting": "Fri 21 Nov",
+   "notes": "60-lawyer borrower-side banking group; associates spend first drafts reconciling term sheets to precedent; partners want house positions applied without a memo.",
+   "flows": [
+    "word-redline",
+    "playbook-memory",
+    "assistant-cited"
+   ],
+   "_script": "TODO by lane: title{eyebrow,headline,accent}, end{line}, vo[5] (spoken spelling), captions[5] (written spelling)"
+  },
+  {
+   "id": "thornbury-health",
+   "name": "Thornbury Health Trust",
+   "segment": "Public sector legal · Estates & claims",
+   "ae": "Dana Whitfield",
+   "meeting": "Mon 24 Nov",
+   "notes": "Six-lawyer team covering 800 estate and service contracts plus clinical claims files; clinicians and estates managers email questions daily.",
+   "flows": [
+    "vault-review",
+    "chronology",
+    "outlook-reply"
+   ],
+   "_script": "TODO by lane: title{eyebrow,headline,accent}, end{line}, vo[5] (spoken spelling), captions[5] (written spelling)"
+  },
+  {
+   "id": "halcyon-media",
+   "name": "Halcyon Media Group",
+   "segment": "In-house legal · Rights & licensing",
+   "ae": "Marcus Lindgren",
+   "meeting": "Tue 25 Nov",
+   "notes": "Rights team clears about 3,000 talent and music agreements a year; producers email for clearances under broadcast deadlines.",
+   "flows": [
+    "assistant-ask",
+    "outlook-reply",
+    "vault-review"
+   ],
+   "_script": "TODO by lane: title{eyebrow,headline,accent}, end{line}, vo[5] (spoken spelling), captions[5] (written spelling)"
+  },
+  {
+   "id": "sato-lindqvist",
+   "name": "Sato Lindqvist",
+   "segment": "Law firm · Cross-border M&A",
+   "ae": "Priya Raman",
+   "meeting": "Wed 26 Nov",
+   "notes": "Due diligence data rooms of 5,000 to 20,000 documents; red-flag reports due within 72 hours; SPA mark-ups follow each client's risk appetite.",
+   "flows": [
+    "vault-review",
+    "assistant-cited",
+    "word-redline"
+   ],
+   "_script": "TODO by lane: title{eyebrow,headline,accent}, end{line}, vo[5] (spoken spelling), captions[5] (written spelling)"
+  }
+ ]
+}

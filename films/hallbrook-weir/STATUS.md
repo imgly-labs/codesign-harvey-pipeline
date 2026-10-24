@@ -1,0 +1,1 @@
+hallbrook-weir | Hallbrook & Weir | vault-review, word-redline, outlook-reply | done (rebuilt by lane A, fixed engine: CTA fade) | 42.0 s | films/hallbrook-weir/hallbrook-weir.mp4 | 16:15–16:15 | flags: none; audioDuration 42.005 ≈ 42.0; imgly 4.3 MB (not re-saved after contact sheet)

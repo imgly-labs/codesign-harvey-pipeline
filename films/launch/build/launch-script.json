@@ -1,0 +1,283 @@
+{
+ "note": "v2 beats from storyboard.pdf; starts snapped to the 0.6 s beat grid (100 BPM)",
+ "beats": [
+  {
+   "kind": "type",
+   "start": 0,
+   "len": 4.194,
+   "lead": 0.4,
+   "words": "A client alert is not a chat answer.",
+   "accent": "not",
+   "bgUri": "workspace://assets/8b9bc22e79d6.png"
+  },
+  {
+   "kind": "flow",
+   "start": 4.194,
+   "len": 7.134,
+   "lead": 0.4,
+   "wideLen": 2.973,
+   "flow": {
+    "category": "Today",
+    "label": "The answer. Not yet a document.",
+    "screenUri": "workspace://assets/8b9bc22e79d6.png",
+    "detail": {
+     "x": 300,
+     "y": 120,
+     "w": 1280,
+     "h": 720
+    },
+    "click": null
+   }
+  },
+  {
+   "kind": "title",
+   "start": 11.328,
+   "len": 4.161,
+   "lead": 0.4,
+   "eyebrow": "New in Quillon",
+   "words": "Quillon Briefs",
+   "accent": "Briefs"
+  },
+  {
+   "kind": "flow",
+   "start": 15.489,
+   "len": 5.945,
+   "lead": 0.3,
+   "wideLen": 2.378,
+   "flow": {
+    "category": "Assistant",
+    "label": "Ask for the deliverable",
+    "screenUri": "workspace://assets/d6251a9c5df8.png",
+    "detail": {
+     "x": 380,
+     "y": 280,
+     "w": 1120,
+     "h": 630
+    },
+    "click": [
+     935,
+     685
+    ]
+   }
+  },
+  {
+   "kind": "cards",
+   "start": 21.434,
+   "len": 3.567,
+   "lead": 0,
+   "cards": [
+    "Two pages.",
+    "Firm style.",
+    "Every line cited."
+   ],
+   "cardLen": 1.189,
+   "accent": "cited",
+   "trOut": "cross-zoom"
+  },
+  {
+   "kind": "flow",
+   "start": 25.001,
+   "len": 8.323,
+   "lead": 1.189,
+   "wideLen": 2.973,
+   "drop": true,
+   "flow": {
+    "category": "Quillon Briefs",
+    "label": "Client alert \u00b7 2 pages \u00b7 41 s",
+    "screenUri": "workspace://assets/39677c53b6a5.png",
+    "detail": {
+     "x": 340,
+     "y": 290,
+     "w": 1200,
+     "h": 675
+    },
+    "click": [
+     660,
+     505
+    ],
+    "popover": {
+     "text": "[1] Senior Credit Agreement, \u00a7 1.01\n\u201cChange of Control\u201d means the Sponsor and its Affiliates cease to own at least 50.1% of the voting power of the Borrower.",
+     "x": 620,
+     "y": 560,
+     "w": 700,
+     "ranges": [
+      {
+       "from": 0,
+       "to": 3,
+       "color": {
+        "r": 0.761,
+        "g": 0.255,
+        "b": 0.176,
+        "a": 1
+       },
+       "weight": "semiBold"
+      },
+      {
+       "from": 115,
+       "to": 120,
+       "color": {
+        "r": 0.761,
+        "g": 0.255,
+        "b": 0.176,
+        "a": 1
+       },
+       "weight": "semiBold"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "kind": "flow",
+   "start": 33.324,
+   "len": 5.945,
+   "lead": 0.4,
+   "wideLen": 2.378,
+   "flow": {
+    "category": "Quillon Briefs",
+    "label": "One matter, three deliverables",
+    "screenUri": "workspace://assets/490b8de39fa5.png",
+    "detail": {
+     "x": 700,
+     "y": 240,
+     "w": 900,
+     "h": 506
+    },
+    "click": null
+   }
+  },
+  {
+   "kind": "flow",
+   "start": 39.269,
+   "len": 5.351,
+   "lead": 0.4,
+   "wideLen": 2.378,
+   "trOut": "cross-fade",
+   "flow": {
+    "category": "Word",
+    "label": "Opens in Word, tracked",
+    "screenUri": "workspace://assets/3c612edb9363.png",
+    "detail": {
+     "x": 160,
+     "y": 140,
+     "w": 1400,
+     "h": 788
+    },
+    "click": [
+     1130,
+     492
+    ]
+   }
+  },
+  {
+   "kind": "end",
+   "start": 44.62,
+   "len": 8.18,
+   "lead": 0.4,
+   "words": "Send the document, not the answer.",
+   "direction": "In Quillon Assistant from today \u00b7 quillon.example/briefs"
+  }
+ ],
+ "captions": [
+  "A client alert is not a chat answer.",
+  "Quillon already finds the answer. Then someone spends the evening formatting it.",
+  "Now Quillon writes the document itself.",
+  "Ask for a two-page client alert on the Meridian facilities, in your firm\u2019s style.",
+  "",
+  "Forty-one seconds later: letterhead, defined terms, every sentence footnoted.",
+  "The same matter becomes a board memo, or a chronology exhibit.",
+  "Open it in Word, styles intact, ready for the partner\u2019s pen.",
+  "Quillon Briefs. Send the document, not the answer."
+ ],
+ "sfx": [
+  {
+   "kind": "whoosh",
+   "t": 4.044
+  },
+  {
+   "kind": "whoosh",
+   "t": 11.178
+  },
+  {
+   "kind": "whoosh",
+   "t": 15.339
+  },
+  {
+   "kind": "whoosh",
+   "t": 21.284
+  },
+  {
+   "kind": "whoosh",
+   "t": 33.174
+  },
+  {
+   "kind": "whoosh",
+   "t": 39.119
+  },
+  {
+   "kind": "hit",
+   "t": 25.001
+  }
+ ],
+ "endCardCode": "end-card.js",
+ "musicSegments": [
+  {
+   "page": [
+    0,
+    14.3
+   ],
+   "src": 0,
+   "vol": 0.35
+  },
+  {
+   "page": [
+    14.3,
+    16.678
+   ],
+   "src": 11.922,
+   "vol": 0.35
+  },
+  {
+   "page": [
+    16.678,
+    19.056
+   ],
+   "src": 11.922,
+   "vol": 0.35
+  },
+  {
+   "page": [
+    19.056,
+    21.434
+   ],
+   "src": 11.922,
+   "vol": 0.35
+  },
+  {
+   "page": [
+    21.434,
+    26.19
+   ],
+   "src": 11.922,
+   "vol": 0.85
+  },
+  {
+   "page": [
+    26.19,
+    39.269
+   ],
+   "src": 16.678,
+   "vol": 0.35
+  },
+  {
+   "page": [
+    39.269,
+    52.8
+   ],
+   "src": 39.269,
+   "vol": 0.35,
+   "fadeOut": 2.0
+  }
+ ],
+ "musicUri": "workspace://assets/02506e85b455.m4a"
+}

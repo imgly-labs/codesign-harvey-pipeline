@@ -1,0 +1,1 @@
+marlowe-kent | Marlowe Kent | word-redline, playbook-memory, assistant-cited | done | 43.2 s | films/marlowe-kent/marlowe-kent.mp4 | 16:10–16:12 | no engine flags; CTA slide→fade (engine bug); content gap: product-map Word/playbook screens are lender-side, account is borrower-side

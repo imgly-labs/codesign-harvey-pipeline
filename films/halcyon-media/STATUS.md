@@ -1,0 +1,1 @@
+halcyon-media | Halcyon Media Group | assistant-ask, outlook-reply, vault-review | done | 43.2 s | films/halcyon-media/halcyon-media.mp4 | 16:15–16:15 | Rebuilt from regenerated build/halcyon-media-edit.js (fixed flows.json + CTA fade). Engine flags: none; no in-film workarounds. audioDuration 43.2 = duration. .imgly saved before the contact sheet (4.3 MB), not re-saved after it.

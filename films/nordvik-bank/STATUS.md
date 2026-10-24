@@ -1,0 +1,1 @@
+nordvik-bank | Nordvik Bank | assistant-cited, word-redline, playbook-memory | done (rebuilt, fixed engine: CTA fade) | 43.2 s | films/nordvik-bank/nordvik-bank.mp4 | 16:16–16:17 | flags: none; audioDuration 43.2 = duration; imgly 4.3 MB (not re-saved after contact sheet; replaces the earlier 32 MB archive)

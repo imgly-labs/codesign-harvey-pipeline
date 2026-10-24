@@ -1,0 +1,1 @@
+brightmoor-energy | Brightmoor Energy | chronology, vault-review, word-redline | done | 36.0 s | films/brightmoor-energy/brightmoor-energy.mp4 | 16:17–16:19 | REBUILT from regenerated build (fixed flows.json chronology framing + engine CTA fade); no flags, no in-film workarounds; .imgly 4.3 MB (saved before contact sheet, not re-saved); audioDuration 36.01 ≈ 36.0

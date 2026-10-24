@@ -1,0 +1,1 @@
+pelham-grant | Pelham Grant | chronology, assistant-cited, playbook-memory | done | 39.6 s | films/pelham-grant/pelham-grant.mp4 | 16:16–16:17 | REBUILT by lane B from regenerated build (fixed flows.json chronology framing + engine CTA fade); no flags, no in-film workarounds; script by lane A (accounts/pelham-grant.script.json); audioDuration 39.616 ≈ 39.6
