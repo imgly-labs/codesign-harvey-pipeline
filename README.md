@@ -22,7 +22,7 @@ screens, voice, music, SFX).
 
 **Two ways to run it yourself**
 - **CoDesign MCP** (free): the Claude Code plugin this repo was built with. Install in two commands, see `REPRODUCE.md`.
-- **CoDesign SDK**: put the same pipeline inside your own CMS or product. [Contact sales](https://codesign.co).
+- **CoDesign SDK**: put the same pipeline inside your own CMS or product. [Contact sales](https://img.ly/forms/contact-sales/) to get a CoDesign license key.
 - The **CoDesign app** is coming soon: [register here](https://go.imgly.dev/osvah1).
 
 Quillon and every account are fictional. No Harvey footage, UI, logo or voice was used.
