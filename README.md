@@ -26,4 +26,4 @@ screens, voice, music, SFX).
 - The **CoDesign app** is coming soon: [register here](https://go.imgly.dev/osvah1).
 
 Quillon and every account are fictional. No Harvey footage, UI, logo or voice was used.
-Code is MIT, everything else CC BY 4.0; see `LICENSE`.
+Code is MIT, designs and documents CC BY 4.0; the generated audio is included for reproduction only (see `LICENSE`).
