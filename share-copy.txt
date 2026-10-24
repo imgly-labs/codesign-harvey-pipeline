@@ -1,23 +1,20 @@
 === LinkedIn ===
-Harvey's marketing team published a great write-up on how they build product films with agents: 36 tailored
-demo films in 69 minutes, on Figma, Figma Motion, Figma Weave, ElevenLabs and a ~750-line film engine.
+See the LinkedIn article and post copy in the marketing kit (article/linkedin.md). Short version:
 
-We rebuilt the core of that pipeline with one design tool, IMG.LY CoDesign:
-• brand rules agents read
-• the product's screens rebuilt once, plus a menu of flows
-• a ~220-line film engine: one edit turns a script into a finished film (voice, music, captions, pointer clicks, end card)
-• QA that checks every film and builds the contact sheet from the exported video
-• three agent lanes: 12 tailored films in 19 minutes, including a fix-and-rebuild pass
-• plus a storyboard-driven launch film and on-brand blog graphics
+Harvey made 36 tailored product films in 69 minutes with Figma, Figma Motion, Figma Weave, ElevenLabs and 750 lines
+of custom code.
+
+I rebuilt their pipeline with one design tool, IMG.LY CoDesign, and no dev team: 42 films, the last 30 in 18 minutes.
+Everything is open, so you can reproduce it yourself.
 
 Harvey: lovely pipeline. Your move. 😉
-Everyone else: build your own. The full recipe (engine, briefs, prompts): github.com/imgly-labs/codesign-harvey-pipeline
-Try it: codesign.co
+Everyone else: build your own. Recipe: github.com/imgly-labs/codesign-harvey-pipeline · Try it: codesign.co
 
 === X / Threads ===
 Harvey's team made 36 tailored product films in 69 min with Figma + Motion + Weave + ElevenLabs + ~750 lines of JS.
 
-We rebuilt it with one design tool, CoDesign: 12 tailored films in 19 min (fixes included), 3 agent lanes, voice, music, captions, QA.
+We rebuilt it with one design tool, CoDesign: 42 tailored films, the last 30 in 18 min, 5 agent lanes, voice, music,
+captions, QA. All open.
 
 Harvey [tag their handle]: lovely pipeline. Your move.
 Recipe: github.com/imgly-labs/codesign-harvey-pipeline · Try it: codesign.co
@@ -25,9 +22,12 @@ Recipe: github.com/imgly-labs/codesign-harvey-pipeline · Try it: codesign.co
 === Alt text (explainer.mp4) ===
 A 67-second explainer. It quotes Harvey's write-up (36 tailored films in 69 minutes), lists their five-tool stack,
 then answers with "One design tool: IMG.LY CoDesign". It shows the four steps (brand rules, product screens, a one-edit
-film engine, QA contact sheets) and a 4×3 wall of tailored account films ("12 films · 19 minutes") that lands on the beat drop. It ends with
-"Harvey: lovely pipeline. Your move." and the CoDesign install commands.
+film engine, QA contact sheets) and a 7×6 wall of 42 tailored account films ("42 films · the last 30 in 18 minutes")
+that lands on the beat drop. It ends with "Harvey: lovely pipeline. Your move.", the CoDesign install commands and
+codesign.co.
 
 === Fine print for any post ===
 Quillon and all accounts are fictional. No Harvey footage, UI, logo or voice was used. Harvey's numbers are quoted
-from their post; ours are wall-clock from batch start to the lanes' completion reports and the last rebuilt film, 2026-10-23.
+from their post. Ours are wall-clock: batch 1 (12 films) 2026-10-23 16:00 → 16:19 including a fix-and-rebuild pass;
+batch 2 (30 films) 2026-10-24 14:37:50 → 14:55:45, from the first lane prompt to the last mp4. Our films run 41–47 s;
+Harvey's post doesn't give theirs, so the numbers are side by side, not a race.
