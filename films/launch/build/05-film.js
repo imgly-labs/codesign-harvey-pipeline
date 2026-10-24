@@ -45,7 +45,7 @@ const id = async (n) => (await engine.design.findByName(n))[0];
 const beats = SCRIPT.beats.map((b, i) => ({ ...b, vo: SCRIPT.vo[i], caption: SCRIPT.captions[i] }));
 const TOTAL = beats[beats.length - 1].start + beats[beats.length - 1].len;
 
-// ---------- 2. page: keep the page + music from the music edit, clear everything else ----------
+// ---------- 2. page: reuse the page from the music edit, clear everything on it (music is re-added in segments) ----------
 const [page] = await engine.design.findByName('film');
 await engine.design.setProps(page, { playback: { duration: TOTAL }, fill: solid(C.paper) });
 for (const c of await engine.design.getChildren(page)) await engine.design.destroy(c);
