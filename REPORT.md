@@ -15,7 +15,7 @@ No Harvey footage, UI, logo or voice clone was used.
 | 44 company-agnostic flows in 13 categories | Figma | 7 flows in 5 categories (`flows.json`: screen, punch-in region, click target) | `product-map/flows.json` |
 | Account research | Enterpret MCP (Gong, Salesforce, Slack) | Account briefs (`notes`): stand-in, orchestration rather than production | `accounts/` |
 | Script + cloned narrator | Agent + ElevenLabs MCP | Lane agent writes the script (5 of 12 pre-written in `accounts.json`); `elevenlabs/eleven-v3-tts` via the CoDesign gateway (stock voice) | `accounts/*.script.json` |
-| ~750-line JS film engine | Custom JS on Figma exports | `engine/film.js` (~220 lines): one `edit` = one finished timeline | `engine/` |
+| ~750-line JS film engine | Custom JS building each film inside Figma | `engine/film.js` (~220 lines): one `edit` = one finished timeline | `engine/` |
 | Contact sheets + flags (clipped text, small type, stray pointers) | Custom | In-engine QA in the same edit + contact sheet built from the exported mp4 | `films/*/contact-sheet.png` |
 | 3 lane files + coordinator; 36 films in 69 min | Figma files | 3 herdr lanes (Claude Code sessions sharing one local CoDesign server) + coordinator | `tracker.md` |
 | Tracker artifact | Claude artifact | `tracker.md` + per-film `STATUS.md` | |
@@ -40,7 +40,7 @@ and an editable `.imgly`; `tracker.md` lists them.
 
 Caveats: the batch numbers count wall-clock from batch start (`lanes/batch-start.txt`, 16:00) to the lanes' completion reports (16:10–16:12) and the last rebuilt mp4 (16:19); the lanes ran on one laptop sharing one local
 
-Batch 2 caveats: wall-clock from the first lane prompt (`lanes/batch2-start.txt`, 14:37:50) to the last mp4's file time (14:55:45), on one 16-core / 64 GB Mac. It includes about 5 minutes lane G lost waiting on CoDesign's machine-wide 4-engine limit before it was restarted with `IMGLY_MAX_ENGINES=6`. Two of lane G's films were reassigned to idle lanes near the end. Our films run 41–47 s; Harvey's post doesn't give their length, so the per-film numbers aren't like for like.
+Batch 2 caveats: wall-clock from the first lane prompt (`lanes/batch2-start.txt`, 14:37:50) to the last mp4's file time (14:55:45), on one 16-core / 64 GB Mac. It includes about 5 minutes lane G lost waiting on CoDesign's machine-wide 4-engine limit before it was restarted with `IMGLY_MAX_ENGINES=6`. Two of lane G's films were reassigned to idle lanes near the end. Our films run 35–48 s (batch 2: 41–47 s); Harvey's post doesn't give their length, so the per-film numbers aren't like for like.
 CoDesign server (up to 4 engines). Quillon's 7 shared screens are law-firm flavoured, so in-house accounts (insurance,
 logistics) get a slightly generic product story. A larger flow menu (Harvey has 44) would close that gap, and adding a flow is one
 `edit` plus one `flows.json` entry.

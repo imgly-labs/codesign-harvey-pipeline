@@ -34,7 +34,7 @@ cd codesign-harvey-pipeline && git lfs pull --include "assets/**"
 The finished films and designs are then small LFS pointer files. Fetch one when you want it, e.g.
 `git lfs pull --include "films/nordvik-bank/**"`.
 
-**(b) Everything, about 2.5 GB:**
+**(b) Everything, about 3.5 GB:**
 
 ```sh
 git clone https://github.com/imgly-labs/codesign-harvey-pipeline
