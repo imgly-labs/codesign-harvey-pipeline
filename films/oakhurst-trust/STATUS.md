@@ -1,0 +1,1 @@
+oakhurst-trust | Oakhurst Trust | vault-review, assistant-ask, outlook-reply | done | 45.6 s | films/oakhurst-trust/oakhurst-trust.mp4 | 14:51–14:52 | Lane F. Engine flags: none; no in-film workarounds; judge pass first round. Voice says 'most-favoured-nation', caption says 'MFN'. audioDuration 45.611 ≈ 45.6. .imgly saved before contact sheet.

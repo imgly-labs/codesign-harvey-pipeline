@@ -28,7 +28,7 @@ No Harvey footage, UI, logo or voice clone was used.
 |---|---|---|
 | Tools | Figma, Figma Motion, Figma Weave, ElevenLabs (MCP), Enterpret MCP, custom JS engine, Claude | CoDesign MCP + its AI gateway, Claude Code, herdr panes |
 | Film engine | ~750 lines of JS | `engine/film.js` ~220 lines, runs as ONE `edit` per film |
-| Tailored films | 36 in 69 min (one batch) → ~1.9 min/film | 12 in 19 min incl. a fix-and-rebuild pass (first pass 11 in 12 min, 16:00 → 16:12) → ~1.6 min/film |
+| Tailored films | 36 in 69 min (one batch) → ~1.9 min/film | Batch 1: 12 in 19 min incl. a fix-and-rebuild pass (first pass 11 in 12 min) → ~1.6 min/film. Batch 2: 30 in 17 min 56 s (5 lanes, 0.5.1, 14:37:50 → 14:55:45) → ~0.6 min/film. 42 in total. |
 | Fix-and-rebuild | not described | 9 films rebuilt with engine fixes in 6 min (16:13 → 16:19) |
 | Launch film | Figma storyboard, review comments, beat drop, outro options | `films/launch/`: storyboard v1 → review notes → v2, standing rules, drop at 25 s, outros A/B/C, 52.8 s |
 | QA | contact sheets, flags (clipped text, small type, stray pointers) | same flags in-engine + caption pace + voice fit; contact sheet cut from the exported mp4 |
@@ -39,6 +39,8 @@ Every account film and the explainer have a recorded `judge` pass (`scorecard`);
 and an editable `.imgly`; `tracker.md` lists them.
 
 Caveats: the batch numbers count wall-clock from batch start (`lanes/batch-start.txt`, 16:00) to the lanes' completion reports (16:10–16:12) and the last rebuilt mp4 (16:19); the lanes ran on one laptop sharing one local
+
+Batch 2 caveats: wall-clock from the first lane prompt (`lanes/batch2-start.txt`, 14:37:50) to the last mp4's file time (14:55:45), on one 16-core / 64 GB Mac. It includes about 5 minutes lane G lost waiting on CoDesign's machine-wide 4-engine limit before it was restarted with `IMGLY_MAX_ENGINES=6`. Two of lane G's films were reassigned to idle lanes near the end. Our films run 41–47 s; Harvey's post doesn't give their length, so the per-film numbers aren't like for like.
 CoDesign server (up to 4 engines). Quillon's 7 shared screens are law-firm flavoured, so in-house accounts (insurance,
 logistics) get a slightly generic product story. A larger flow menu (Harvey has 44) would close that gap, and adding a flow is one
 `edit` plus one `flows.json` entry.

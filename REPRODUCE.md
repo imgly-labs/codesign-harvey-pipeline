@@ -24,7 +24,7 @@ it on your machine from the same inputs.
 
 Media is stored with Git LFS on `lfs.imgly.dev` (configured in `.lfsconfig`; public, no login).
 
-**(a) Inputs only, 13 MB.** Enough for steps 2–4:
+**(a) Inputs only, 29 MB.** Enough for steps 2–4:
 
 ```sh
 GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/imgly-labs/codesign-harvey-pipeline
@@ -34,7 +34,7 @@ cd codesign-harvey-pipeline && git lfs pull --include "assets/**"
 The finished films and designs are then small LFS pointer files. Fetch one when you want it, e.g.
 `git lfs pull --include "films/nordvik-bank/**"`.
 
-**(b) Everything, about 800 MB:**
+**(b) Everything, about 2.5 GB:**
 
 ```sh
 git clone https://github.com/imgly-labs/codesign-harvey-pipeline
@@ -43,7 +43,7 @@ git clone https://github.com/imgly-labs/codesign-harvey-pipeline
 ## 2. Load the inputs into CoDesign
 
 `assets/` holds every input the build scripts use: the product screens, the voice-over clips, the music beds and the
-sound effects. CoDesign names an asset after the first 12 hex digits of its SHA-256, so adding these 86 files gives you exactly the
+sound effects. CoDesign names an asset after the first 12 hex digits of its SHA-256, so adding these 236 files gives you exactly the
 `workspace://assets/<sha>.<ext>` URIs the scripts reference.
 
 For a clean reproduction, start Claude Code with an empty CoDesign workspace, so nothing from earlier work can stand in
@@ -55,12 +55,12 @@ CODESIGN_WORKSPACE=/tmp/codesign-harvey claude
 
 Then ask:
 
-> Use the CoDesign `asset_add` tool on every file in `assets/` (86 calls; run several in parallel, absolute paths). Check that
+> Use the CoDesign `asset_add` tool on every file in `assets/` (236 calls; run several in parallel, absolute paths). Check that
 > each returned uri ends in the file's own name.
 
 After the first `asset_add`, check that the file appeared in `$CODESIGN_WORKSPACE/assets/`: that proves the
-empty workspace is in use. CoDesign also writes one thumbnail per PNG, so the folder ends up with 95 files; that is
-expected. The whole step takes about a minute. To load only what one film needs, list its inputs with
+empty workspace is in use. CoDesign also writes one thumbnail per PNG, so the folder ends up with 245 files; that is
+expected. The whole step takes a few minutes; to rebuild one film, load only its inputs (below). To load only what one film needs, list its inputs with
 `grep -o 'workspace://assets/[^"]*' build/nordvik-bank-edit.js | sort -u` (9 files for Nordvik Bank).
 
 ## 3. Rebuild an account film
@@ -87,8 +87,9 @@ What you should see:
   judge" note about small labels.
 - The scripts make a few `engine.block` calls for track and transition options; 0.5.1 accepts them.
 
-Clone to verified mp4 took about 4 minutes in our clean-room test. The other 11 accounts work the same way;
-`tracker.md` lists every film with its duration.
+Clone to verified mp4 took about 4 minutes in our clean-room test. The other 41 accounts work the same way;
+`tracker.md` lists every film with its duration. A few batch-2 films got a small copy fix in a judge edit after
+the build (each one is noted in its `films/<id>/STATUS.md`); the build script alone gives the film before that fix.
 
 ## 4. Make a film for a new account
 

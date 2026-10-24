@@ -1,0 +1,1 @@
+kingsley-ward | Kingsley Ward | assistant-cited, chronology, outlook-reply | done | 42.0 s | films/kingsley-ward/kingsley-ward.mp4 | 14:39–14:42 | no engine flags; judge pass; lint (non-blocking): media layer extends beyond page (punch-in shots, by design), 4 tracks fit 3; content gap: product-map screens show credit/lease matters, not insurance coverage

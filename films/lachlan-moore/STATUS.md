@@ -1,0 +1,1 @@
+lachlan-moore | Lachlan Moore | vault-review, assistant-cited, assistant-ask | done | 46.8 s | films/lachlan-moore/lachlan-moore.mp4 | 14:47–14:49 | Engine flags: none; no workarounds. audioDuration 46.81 = duration. Judge pass on 9 frames.

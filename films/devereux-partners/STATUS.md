@@ -1,0 +1,1 @@
+devereux-partners | Devereux Partners | assistant-cited, chronology, word-redline | done | 44.4 s | films/devereux-partners/devereux-partners.mp4 | 14:47–14:49 | no engine flags; judge pass; lint (non-blocking): media layer beyond page (punch-ins), 4 tracks fit 3; VO line 4 re-voiced to name the amendment the Word screen shows; content gap: chronology screen is a lease dispute

@@ -12,7 +12,7 @@ reproduce all of it: **[REPRODUCE.md](REPRODUCE.md)**.
 - `REPORT.md`: Harvey step → CoDesign equivalent, results, the CoDesign gaps we hit
 
 **The output**
-- `films/<account>/`: 12 tailored account films (mp4 + editable `.imgly` + contact sheet + STATUS), `tracker.md`
+- `films/<account>/`: 42 tailored account films (batch 1: 12; batch 2: 30 in 18 minutes) (mp4 + editable `.imgly` + contact sheet + STATUS), `tracker.md`
 - `films/launch/`: "Quillon Briefs" launch film with its storyboard v1/v2, review notes, standing rules and outros A/B/C
 - `blog/`: brand template library, three requests with Spectre-style replies, hero/chart PNG, PDF/X-4 guide
 

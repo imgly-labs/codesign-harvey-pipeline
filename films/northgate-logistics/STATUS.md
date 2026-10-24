@@ -1,0 +1,1 @@
+northgate-logistics | Northgate Logistics | playbook-memory, outlook-reply, assistant-ask | done | 43.2 s | films/northgate-logistics/northgate-logistics.mp4 | 14:47–14:49 | lane J; no flags; judge pass; audioDuration 43.2 = 43.2; script accounts/northgate-logistics.script.json

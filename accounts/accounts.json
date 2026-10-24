@@ -238,6 +238,396 @@
     "word-redline"
    ],
    "_script": "TODO by lane: title{eyebrow,headline,accent}, end{line}, vo[5] (spoken spelling), captions[5] (written spelling)"
+  },
+  {
+   "id": "ashcombe-reed",
+   "name": "Ashcombe Reed",
+   "segment": "Law firm · Banking & finance",
+   "ae": "Priya Raman",
+   "meeting": "Mon 9 Nov",
+   "notes": "Banking team runs ~180 facility agreements a year; juniors compare each draft against the firm's market positions by hand; clients want turnaround in 24 hours.",
+   "flows": [
+    "word-redline",
+    "playbook-memory",
+    "assistant-cited"
+   ]
+  },
+  {
+   "id": "calder-mines",
+   "name": "Calder Mines",
+   "segment": "In-house legal · Mining",
+   "ae": "Tom Okafor",
+   "meeting": "Mon 9 Nov",
+   "notes": "Twelve-lawyer team supports 40 operating sites; offtake and royalty contracts sit in three systems; board asks for exposure summaries every quarter.",
+   "flows": [
+    "vault-review",
+    "assistant-ask",
+    "chronology"
+   ]
+  },
+  {
+   "id": "fenwick-lowe",
+   "name": "Fenwick Lowe",
+   "segment": "Law firm · Disputes",
+   "ae": "Hannah Brook",
+   "meeting": "Tue 10 Nov",
+   "notes": "Disputes group handles ~60 live arbitrations; chronologies are built from 50,000-document productions; partners want every fact cited to an exhibit.",
+   "flows": [
+    "chronology",
+    "assistant-cited",
+    "vault-review"
+   ]
+  },
+  {
+   "id": "meridian-rail",
+   "name": "Meridian Rail",
+   "segment": "In-house legal · Transport",
+   "ae": "Lukas Weber",
+   "meeting": "Tue 10 Nov",
+   "notes": "Procurement legal reviews ~900 supplier contracts a year; liability caps vary wildly; commercial team emails the same five questions daily.",
+   "flows": [
+    "playbook-memory",
+    "outlook-reply",
+    "word-redline"
+   ]
+  },
+  {
+   "id": "oakhurst-trust",
+   "name": "Oakhurst Trust",
+   "segment": "In-house legal · Asset management",
+   "ae": "Sofia Marquez",
+   "meeting": "Wed 11 Nov",
+   "notes": "Fund legal team handles 300 side letters per fundraise; MFN elections tracked in spreadsheets; investor relations needs answers same day.",
+   "flows": [
+    "vault-review",
+    "assistant-ask",
+    "outlook-reply"
+   ]
+  },
+  {
+   "id": "blackthorn-ip",
+   "name": "Blackthorn IP",
+   "segment": "Law firm · Patents & IP",
+   "ae": "Mei Tanaka",
+   "meeting": "Wed 11 Nov",
+   "notes": "IP group drafts ~400 licence agreements a year; field-of-use clauses drift between deals; clients ask for prior-art summaries overnight.",
+   "flows": [
+    "word-redline",
+    "assistant-cited",
+    "playbook-memory"
+   ]
+  },
+  {
+   "id": "harrow-vale",
+   "name": "Harrow & Vale",
+   "segment": "Law firm · Employment",
+   "ae": "James Doyle",
+   "meeting": "Thu 12 Nov",
+   "notes": "Employment team advises 70 corporate clients; settlement agreements rewritten from scratch; HR directors email policy questions constantly.",
+   "flows": [
+    "outlook-reply",
+    "word-redline",
+    "assistant-ask"
+   ]
+  },
+  {
+   "id": "solent-shipping",
+   "name": "Solent Shipping",
+   "segment": "In-house legal · Maritime",
+   "ae": "Anna Lindqvist",
+   "meeting": "Thu 12 Nov",
+   "notes": "Five lawyers cover 120 charter parties a year; demurrage disputes need fast chronologies; laytime clauses differ by broker form.",
+   "flows": [
+    "chronology",
+    "vault-review",
+    "assistant-cited"
+   ]
+  },
+  {
+   "id": "verity-health",
+   "name": "Verity Health",
+   "segment": "In-house legal · Healthcare",
+   "ae": "Rahul Mehta",
+   "meeting": "Fri 13 Nov",
+   "notes": "Legal reviews ~1,500 data-sharing agreements across 30 hospitals; privacy positions must match one playbook; clinicians need quick yes/no answers.",
+   "flows": [
+    "playbook-memory",
+    "assistant-ask",
+    "word-redline"
+   ]
+  },
+  {
+   "id": "graystone-capital",
+   "name": "Graystone Capital",
+   "segment": "In-house legal · Private equity",
+   "ae": "Claire Dubois",
+   "meeting": "Fri 13 Nov",
+   "notes": "Deal team closes ~25 acquisitions a year; diligence data rooms hold 10,000+ documents each; investment committee wants red-flag memos in 48 hours.",
+   "flows": [
+    "vault-review",
+    "chronology",
+    "assistant-cited"
+   ]
+  },
+  {
+   "id": "pemberton-cross",
+   "name": "Pemberton Cross",
+   "segment": "Law firm · Corporate M&A",
+   "ae": "Oliver Grant",
+   "meeting": "Mon 16 Nov",
+   "notes": "M&A group runs 40 deals a year; disclosure letters reviewed line by line; clients expect cited answers on warranties within hours.",
+   "flows": [
+    "assistant-cited",
+    "word-redline",
+    "vault-review"
+   ]
+  },
+  {
+   "id": "aldermoor-energy",
+   "name": "Aldermoor Energy",
+   "segment": "In-house legal · Renewables",
+   "ae": "Freya Nilsen",
+   "meeting": "Mon 16 Nov",
+   "notes": "Legal team supports 85 wind and solar projects; land leases and grid agreements live in shared drives; developers email consent questions every day.",
+   "flows": [
+    "vault-review",
+    "outlook-reply",
+    "assistant-ask"
+   ]
+  },
+  {
+   "id": "kingsley-ward",
+   "name": "Kingsley Ward",
+   "segment": "Law firm · Insurance",
+   "ae": "Samuel Adeyemi",
+   "meeting": "Tue 17 Nov",
+   "notes": "Insurance group handles ~350 coverage disputes a year; policy wordings compared by hand; claims managers want cited coverage positions fast.",
+   "flows": [
+    "assistant-cited",
+    "chronology",
+    "outlook-reply"
+   ]
+  },
+  {
+   "id": "norrland-telecom",
+   "name": "Norrland Telecom",
+   "segment": "In-house legal · Telecoms",
+   "ae": "Elin Berg",
+   "meeting": "Tue 17 Nov",
+   "notes": "Commercial legal signs ~600 tower and spectrum agreements a year; renewal terms buried in PDFs; sales asks for redlines within a day.",
+   "flows": [
+    "word-redline",
+    "vault-review",
+    "playbook-memory"
+   ]
+  },
+  {
+   "id": "castlegate-retail",
+   "name": "Castlegate Retail",
+   "segment": "In-house legal · Retail",
+   "ae": "Grace Holloway",
+   "meeting": "Wed 18 Nov",
+   "notes": "Property legal manages 1,100 store leases; break clauses tracked in Excel; finance asks which leases can exit next year.",
+   "flows": [
+    "vault-review",
+    "assistant-ask",
+    "outlook-reply"
+   ]
+  },
+  {
+   "id": "devereux-partners",
+   "name": "Devereux Partners",
+   "segment": "Law firm · Restructuring",
+   "ae": "Marc Laurent",
+   "meeting": "Wed 18 Nov",
+   "notes": "Restructuring team runs 15 live cases; intercreditor agreements compared under time pressure; creditors want cited answers on priority.",
+   "flows": [
+    "assistant-cited",
+    "chronology",
+    "word-redline"
+   ]
+  },
+  {
+   "id": "halden-pharma",
+   "name": "Halden Pharma",
+   "segment": "In-house legal · Life sciences",
+   "ae": "Ingrid Solberg",
+   "meeting": "Thu 19 Nov",
+   "notes": "Legal reviews ~700 clinical trial agreements a year; indemnity positions differ by site; study managers email the same questions weekly.",
+   "flows": [
+    "playbook-memory",
+    "outlook-reply",
+    "word-redline"
+   ]
+  },
+  {
+   "id": "redfern-sloane",
+   "name": "Redfern Sloane",
+   "segment": "Law firm · Real estate finance",
+   "ae": "Ethan Price",
+   "meeting": "Thu 19 Nov",
+   "notes": "Real estate finance team reviews ~500 loan packs a year; title reports checked against facility terms by hand; lenders want issues lists in 24 hours.",
+   "flows": [
+    "vault-review",
+    "assistant-cited",
+    "word-redline"
+   ]
+  },
+  {
+   "id": "auric-payments",
+   "name": "Auric Payments",
+   "segment": "In-house legal · Fintech",
+   "ae": "Nadia Hassan",
+   "meeting": "Fri 20 Nov",
+   "notes": "Six lawyers support 300 merchant agreements a month; regulator questions arrive weekly; product teams want answers before launch.",
+   "flows": [
+    "assistant-ask",
+    "playbook-memory",
+    "outlook-reply"
+   ]
+  },
+  {
+   "id": "whitlock-barnes",
+   "name": "Whitlock Barnes",
+   "segment": "Law firm · Construction",
+   "ae": "George Turner",
+   "meeting": "Fri 20 Nov",
+   "notes": "Construction group handles ~80 delay and defect claims a year; site records run to thousands of emails; clients want a chronology before mediation.",
+   "flows": [
+    "chronology",
+    "vault-review",
+    "assistant-cited"
+   ]
+  },
+  {
+   "id": "tamsin-foods",
+   "name": "Tamsin Foods",
+   "segment": "In-house legal · Consumer goods",
+   "ae": "Laura Fischer",
+   "meeting": "Mon 23 Nov",
+   "notes": "Legal reviews ~450 distributor agreements a year; exclusivity terms vary by country; sales teams email for quick approvals.",
+   "flows": [
+    "word-redline",
+    "outlook-reply",
+    "playbook-memory"
+   ]
+  },
+  {
+   "id": "lachlan-moore",
+   "name": "Lachlan Moore",
+   "segment": "Law firm · Competition",
+   "ae": "Isla Campbell",
+   "meeting": "Mon 23 Nov",
+   "notes": "Competition team runs 20 merger filings a year; internal documents reviewed by the tens of thousands; clients want cited theories of harm early.",
+   "flows": [
+    "vault-review",
+    "assistant-cited",
+    "assistant-ask"
+   ]
+  },
+  {
+   "id": "everly-media",
+   "name": "Everly Media",
+   "segment": "In-house legal · Publishing",
+   "ae": "Daniel Reyes",
+   "meeting": "Tue 24 Nov",
+   "notes": "Rights team clears ~2,000 licences a year; talent contracts differ by territory; producers need clearance answers same day.",
+   "flows": [
+    "assistant-ask",
+    "vault-review",
+    "outlook-reply"
+   ]
+  },
+  {
+   "id": "stroud-aviation",
+   "name": "Stroud Aviation",
+   "segment": "In-house legal · Aviation",
+   "ae": "Henrik Dahl",
+   "meeting": "Tue 24 Nov",
+   "notes": "Leasing legal manages 140 aircraft leases; return conditions buried in schedules; finance wants a redelivery chronology per tail number.",
+   "flows": [
+    "chronology",
+    "vault-review",
+    "assistant-cited"
+   ]
+  },
+  {
+   "id": "ravensworth-law",
+   "name": "Ravensworth",
+   "segment": "Law firm · Private client",
+   "ae": "Eleanor Hughes",
+   "meeting": "Wed 25 Nov",
+   "notes": "Private client team handles 250 trusts and estates; deeds checked against letters of wishes by hand; families email questions constantly.",
+   "flows": [
+    "outlook-reply",
+    "assistant-cited",
+    "word-redline"
+   ]
+  },
+  {
+   "id": "quarry-hill-water",
+   "name": "Quarry Hill Water",
+   "segment": "In-house legal · Utilities",
+   "ae": "Patrick Nolan",
+   "meeting": "Wed 25 Nov",
+   "notes": "Legal supports 600 easement and wayleave agreements a year; regulator deadlines are tight; engineers need yes/no answers on access rights.",
+   "flows": [
+    "assistant-ask",
+    "vault-review",
+    "playbook-memory"
+   ]
+  },
+  {
+   "id": "sinclair-oduya",
+   "name": "Sinclair Oduya",
+   "segment": "Law firm · Tech transactions",
+   "ae": "Amara Oduya",
+   "meeting": "Thu 26 Nov",
+   "notes": "Tech transactions group negotiates ~300 SaaS agreements a year; data-protection clauses drift from the firm's standard; clients want redlines overnight.",
+   "flows": [
+    "word-redline",
+    "playbook-memory",
+    "assistant-cited"
+   ]
+  },
+  {
+   "id": "northgate-logistics",
+   "name": "Northgate Logistics",
+   "segment": "In-house legal · Logistics",
+   "ae": "Viktor Novak",
+   "meeting": "Thu 26 Nov",
+   "notes": "Legal team supports 1,200 carrier contracts; liability limits differ by mode; operations email claims questions every morning.",
+   "flows": [
+    "playbook-memory",
+    "outlook-reply",
+    "assistant-ask"
+   ]
+  },
+  {
+   "id": "belmont-croft",
+   "name": "Belmont Croft",
+   "segment": "Law firm · Regulatory",
+   "ae": "Fiona Gallagher",
+   "meeting": "Fri 27 Nov",
+   "notes": "Regulatory team answers ~150 enforcement inquiries a year; investigations involve 30,000-document productions; boards want a cited timeline early.",
+   "flows": [
+    "chronology",
+    "assistant-cited",
+    "vault-review"
+   ]
+  },
+  {
+   "id": "larchfield-insurance",
+   "name": "Larchfield Insurance",
+   "segment": "In-house legal · Insurance",
+   "ae": "Owen Matthews",
+   "meeting": "Fri 27 Nov",
+   "notes": "Claims legal reviews ~5,000 policy wordings a year; exclusions phrased differently across products; brokers email coverage questions daily.",
+   "flows": [
+    "assistant-cited",
+    "outlook-reply",
+    "playbook-memory"
+   ]
   }
  ]
 }

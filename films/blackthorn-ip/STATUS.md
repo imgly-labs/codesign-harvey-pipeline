@@ -1,0 +1,1 @@
+blackthorn-ip | Blackthorn IP | word-redline, assistant-cited, playbook-memory | done | 44.4 s | films/blackthorn-ip/blackthorn-ip.mp4 | 14:52–14:55 | Lane F. Engine flags: none; no in-film workarounds; judge pass first round. Voice script spells 'I P' so TTS says the letters; caption 'IP'. audioDuration 44.416 ≈ 44.4. .imgly saved before contact sheet.

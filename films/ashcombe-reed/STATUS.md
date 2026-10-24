@@ -1,0 +1,2 @@
+ashcombe-reed | Ashcombe Reed | word-redline, playbook-memory, assistant-cited | done | 44.4 s | films/ashcombe-reed/ashcombe-reed.mp4 | 14:38–14:42 | Lane F. Engine flags: none. Judge fix: title headline wrapped inside "24-hour" (accent split across lines); added explicit line break (script headline now has 
+, live surgical setProps). audioDuration 44.416 ≈ 44.4. .imgly saved before contact sheet. Note: film.js must be pasted verbatim — the 0.5.1 edit gate only admits engine.block lines that carry their '// engine.block:' annotation comment.

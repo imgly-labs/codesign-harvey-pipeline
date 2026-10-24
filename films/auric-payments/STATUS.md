@@ -1,0 +1,1 @@
+auric-payments | Auric Payments | assistant-ask, playbook-memory, outlook-reply | done | 44.4 s | films/auric-payments/auric-payments.mp4 | 14:39–14:42 | Engine flags: none; no workarounds. audioDuration 44.416 = duration. Judge pass on 9 frames. .imgly saved before contact sheet.

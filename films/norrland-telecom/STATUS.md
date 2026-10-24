@@ -1,0 +1,1 @@
+norrland-telecom | Norrland Telecom | word-redline, vault-review, playbook-memory | done | 44.4 s | films/norrland-telecom/norrland-telecom.mp4 | 14:42–14:44 | no engine flags; judge pass; lint (non-blocking): media layer beyond page (punch-ins), 4 tracks fit 3; content gap: screens show credit/lease matters, not telecoms agreements

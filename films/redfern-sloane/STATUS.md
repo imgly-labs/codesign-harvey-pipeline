@@ -1,0 +1,1 @@
+redfern-sloane | Redfern Sloane | vault-review, assistant-cited, word-redline | done | 40.8 s | films/redfern-sloane/redfern-sloane.mp4 | 14:51–14:53 | no engine flags; judge pass; lint (non-blocking): media layer beyond page (punch-ins), 4 tracks fit 3; content gap: Vault screen is a lease review, not title reports

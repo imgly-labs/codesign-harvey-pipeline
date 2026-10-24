@@ -1,0 +1,1 @@
+whitlock-barnes | Whitlock Barnes | chronology, vault-review, assistant-cited | done | 45.6 s | films/whitlock-barnes/whitlock-barnes.mp4 | 14:42–14:44 | Engine flags: none; no workarounds. audioDuration 45.61 = duration. Judge pass on 9 frames. .imgly saved before contact sheet.

@@ -1,0 +1,1 @@
+stroud-aviation | Stroud Aviation | chronology, vault-review, assistant-cited | done | 45.6 s | films/stroud-aviation/stroud-aviation.mp4 | 14:51–14:52 | Engine flags: none; no workarounds. audioDuration 45.61 = duration. Judge pass on 9 frames.

@@ -8,7 +8,9 @@ We rebuilt the core of that pipeline with **one design tool, [IMG.LY CoDesign](h
 product called **Quillon**:
 
 - 12 tailored account films in **19 minutes** wall-clock across 3 agent lanes, including a fix-and-rebuild pass
-  (first pass: 11 films in 12 minutes). Harvey's write-up reports 36 films in 69 minutes.
+  (first pass: 11 films in 12 minutes).
+- Then **30 more in 17 min 56 s** across 5 lanes, each built from scratch (script, voice, film, judge, mp4):
+  **42 films** in total. Harvey's write-up reports 36 films in 69 minutes.
 - A 53 s launch film, with a storyboard, a review pass, a beat drop and three outro options.
 - On-brand blog graphics and a print-ready PDF guide.
 - The explainer video you may have just watched.
