@@ -12,44 +12,75 @@ it on your machine from the same inputs.
   claude plugin install codesign@imgly-codesign
   ```
 
-- `git` with [Git LFS](https://git-lfs.com), and Node 20+ (only for the small helper scripts in `engine/`).
+- `git` with [Git LFS](https://git-lfs.com).
+- Network access: fonts (Inter, Fraunces) are fetched by family name while building.
+- Node 20+ only for step 4 (the helper scripts in `engine/`).
+- A CoDesign login only for step 4's voice generation. Steps 1–3 need no account.
 
-## 1. Clone
+## 1. Clone (pick one)
 
-```sh
-git clone https://github.com/imgly-labs/codesign-harvey-pipeline
-```
+Media is stored with Git LFS on `lfs.imgly.dev` (configured in `.lfsconfig`; public, no login).
 
-Media is stored with Git LFS on `lfs.imgly.dev` (configured in `.lfsconfig`, no login needed). The full clone is about
-770 MB. To rebuild without downloading the finished films and designs, fetch only the inputs (13 MB):
+**(a) Inputs only, 13 MB.** Enough for steps 2–4:
 
 ```sh
 GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/imgly-labs/codesign-harvey-pipeline
 cd codesign-harvey-pipeline && git lfs pull --include "assets/**"
 ```
 
+The finished films and designs are then small LFS pointer files. Fetch one when you want it, e.g.
+`git lfs pull --include "films/nordvik-bank/**"`.
+
+**(b) Everything, about 800 MB:**
+
+```sh
+git clone https://github.com/imgly-labs/codesign-harvey-pipeline
+```
+
 ## 2. Load the inputs into CoDesign
 
 `assets/` holds every input the build scripts use: the product screens, the voice-over clips, the music beds and the
-sound effects. CoDesign names an asset after the SHA-256 of its bytes, so adding these files gives you exactly the
+sound effects. CoDesign names an asset after the first 12 hex digits of its SHA-256, so adding these 86 files gives you exactly the
 `workspace://assets/<sha>.<ext>` URIs the scripts reference.
 
-Start Claude Code in the repo and ask:
+For a clean reproduction, start Claude Code with an empty CoDesign workspace, so nothing from earlier work can stand in
+for the repo's inputs:
 
-> Use the CoDesign `asset_add` tool on every file in `assets/` (absolute paths). Check that each returned uri ends in
-> the file's own name.
+```sh
+CODESIGN_WORKSPACE=/tmp/codesign-harvey claude
+```
+
+Then ask:
+
+> Use the CoDesign `asset_add` tool on every file in `assets/` (absolute paths), several calls in parallel. Check that
+> each returned uri ends in the file's own name.
+
+That takes about a minute. To load only what one film needs, list its inputs with
+`grep -o 'workspace://assets/[^"]*' build/nordvik-bank-edit.js | sort -u` (9 files for Nordvik Bank).
 
 ## 3. Rebuild an account film
 
-Each `build/<account>-edit.js` is one complete `edit`: it creates the scene and builds the whole film (titles, product
+Each `build/<account>-edit.js` is one complete `edit`: it creates the scene, builds the whole film (titles, product
 moves, pointer, captions, voice, music) and returns a QA report. Ask:
 
-> Read the CoDesign handbook. Then `import({ title: 'Nordvik Bank' })`, run the contents of
-> `build/nordvik-bank-edit.js` as a single `edit`, preview it at 2 s, 15 s and 40 s, and export it as mp4 to
-> `films/nordvik-bank/rebuilt.mp4`.
+> Load the `codesign:handbook` skill. Then `import({ title: 'Nordvik Bank' })`, run the contents of
+> `build/nordvik-bank-edit.js` as a single `edit`, preview it at 2 s, 15 s and 40 s, and export it with
+> `export({ format: 'mp4', blockId: <page from the QA report>, outPath: '<absolute path to this repo>/films/nordvik-bank/rebuilt.mp4' })`.
+> Optionally save the editable design with `export({ format: 'imgly' })`.
 
-Expect 43.2 s with a 43.2 s audio track, matching `films/nordvik-bank/STATUS.md`. The other 11 accounts work the same
-way; `tracker.md` lists every film with its duration.
+What you should see:
+
+- **QA report** (the edit's return value): `duration: 43.2`, five beats, `flags: []`. Any flag (small type, clipped
+  text, stray pointer, voice overrun) means something differs from our run.
+- **Export:** `duration` 43.2 and `audioDuration` 43.2, as in `films/nordvik-bank/STATUS.md`. About 37 MB.
+- **Frames:** 2 s is the title card ("Prepared for Nordvik Bank"), 15 s a punch-in on the cited answer with the
+  pointer, 40 s the end card with the meeting line.
+- **Expected notices, harmless:** a lint note that the media layer extends beyond the page (the punch-ins zoom past
+  the frame on purpose), a note that the clips would fit on fewer tracks, and "this design has never been judged"
+  (run the `judge` skill if you change the film).
+
+Clone to verified mp4 took about 4 minutes in our clean-room test. The other 11 accounts work the same way;
+`tracker.md` lists every film with its duration.
 
 ## 4. Make a film for a new account
 
@@ -72,5 +103,7 @@ sessions as you like.
 - **Explainer:** `explainer/explainer.imgly` is the editable source of `explainer.mp4`. Open it with
   `import({ source: { path: '<absolute path>' } })` and change anything.
 
-Any `.imgly` file here opens the same way. Rebuilt videos match in content and timing; they are not byte-identical,
+Any `.imgly` file here opens the same way.
+
+**Versions:** the films were built with the CoDesign plugin 0.4.3 (CE.SDK engine 1.83.0) and rebuilt with VERIFIED_STABLE. Rebuilt videos match in content and timing; they are not byte-identical,
 because the fonts are looked up by family name and the encoder output varies.
