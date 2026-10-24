@@ -1,6 +1,6 @@
 const SCRIPT = {"id":"sato-lindqvist","account":"Sato Lindqvist","ae":"Priya Raman","meeting":"Wed 26 Nov","title":{"eyebrow":"Prepared for Sato Lindqvist","headline":"20,000 documents. Red flags inside 72 hours.","accent":"72 hours"},"end":{"line":"Quillon for Sato Lindqvist’s cross-border M&A team"},"grid":1.2,"music":{"uri":"workspace://assets/2117b3c7a2e2.m4a"},"flows":[{"id":"vault-review","category":"Contract work","screen":"s3","label":"Review every document at once","detail":{"x":900,"y":250,"w":690,"h":388},"click":[1290,366],"screenUri":"workspace://assets/01d40f8eb595.png"},{"id":"assistant-cited","category":"Assistant","screen":"s2","label":"Answers cited to the page","detail":{"x":300,"y":120,"w":1280,"h":720},"click":[1300,210],"screenUri":"workspace://assets/8b9bc22e79d6.png"},{"id":"word-redline","category":"Word and Outlook","screen":"s4","label":"Redlines in Word, to your playbook","detail":{"x":160,"y":140,"w":1400,"h":788},"click":[1130,492],"screenUri":"workspace://assets/3c612edb9363.png"}],"vo":[{"uri":"workspace://assets/6f6e1ac29090.mp3","dur":9.169,"text":"Sato Lindqvist runs data rooms of up to twenty thousand documents, with red-flag reports due in seventy-two hours."},{"uri":"workspace://assets/219d9bb429d8.mp3","dur":7.706,"text":"Load the data room into Vault. Every document is read at once, and change of control terms come back flagged."},{"uri":"workspace://assets/515d67daa94c.mp3","dur":6.609,"text":"Ask the Assistant, and every answer is cited to the page, with the source clause open beside it."},{"uri":"workspace://assets/c1303f29e00c.mp3","dur":8.751,"text":"In Word, Quillon marks up the S-P-A to each client's playbook, so every redline matches their risk appetite."},{"uri":"workspace://assets/80b2f9137207.mp3","dur":3.866,"text":"Priya will walk your team through it on Wednesday the twenty-sixth."}],"captions":["Sato Lindqvist runs data rooms of up to 20,000 documents, with red-flag reports due in 72 hours.","Load the data room into Vault. Every document is read at once, and change-of-control terms come back flagged.","Ask the Assistant, and every answer is cited to the page, with the source clause open beside it.","In Word, Quillon marks up the SPA to each client’s playbook, so every redline matches their risk appetite.","Priya will walk your team through it on Wednesday the 26th."]};
 // Quillon film engine: ONE `edit` turns a script into a finished, timed film page.
-// Usage: prepend `const SCRIPT = {...};` (see engine/README.md) and run the whole file as the body of
+// Usage: prepend `const SCRIPT = {...};` (engine/make-script.mjs does it; see REPRODUCE.md §4) and run the whole file as the body of
 // one codesign `edit` on an empty design (after `import({ title })`). Returns the QA report as text.
 // Replaces Harvey's ~750-line JS film engine (camera, transitions, captions, pointer clicks, end cards).
 
@@ -52,8 +52,8 @@ beats.forEach((b, i) => {
 const TOTAL = t;
 
 // ---------- 2. page ----------
-engine.scene.create('VerticalStack');
-engine.scene.setMode('Video');
+const scene = await engine.design.create({ type: 'scene' });
+await engine.design.setProps(scene, { scene: { mode: 'Video' } });
 const stack = (await engine.design.findByType('stack'))[0];
 const page = await engine.design.create({ type: 'page', name: 'film', props: { width: W, height: H,
   fill: { type: 'color', color: { value: C.paper } }, playback: { duration: TOTAL } } }, { parent: stack });

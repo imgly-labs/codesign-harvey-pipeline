@@ -1,6 +1,6 @@
 const SCRIPT = {"id":"halcyon-media","account":"Halcyon Media Group","ae":"Marcus Lindgren","meeting":"Tue 25 Nov","title":{"eyebrow":"Prepared for Halcyon Media Group","headline":"3,000 agreements a year. Every answer cited.","accent":"3,000 agreements"},"end":{"line":"Quillon for Halcyon Media Group’s rights team"},"grid":1.2,"music":{"uri":"workspace://assets/2117b3c7a2e2.m4a"},"flows":[{"id":"assistant-ask","category":"Assistant","screen":"s1","label":"Ask across a whole matter","detail":{"x":480,"y":200,"w":1120,"h":630},"click":[1440,458],"screenUri":"workspace://assets/d6251a9c5df8.png"},{"id":"outlook-reply","category":"Word and Outlook","screen":"s6","label":"Replies drafted in Outlook","detail":{"x":900,"y":200,"w":700,"h":394},"click":[1180,502],"screenUri":"workspace://assets/83bca6db8fde.png"},{"id":"vault-review","category":"Contract work","screen":"s3","label":"Review every document at once","detail":{"x":900,"y":250,"w":690,"h":388},"click":[1290,366],"screenUri":"workspace://assets/01d40f8eb595.png"}],"vo":[{"uri":"workspace://assets/7590574cd131.mp3","dur":8.281,"text":"Halcyon Media's rights team clears about three thousand talent and music agreements a year. Here is that work in Quillon."},{"uri":"workspace://assets/e1e7e7047798.mp3","dur":6.426,"text":"Ask one question across a whole matter, and Quillon reads every agreement in the Vault before it answers."},{"uri":"workspace://assets/22977de71ae1.mp3","dur":8.359,"text":"When a producer emails for a clearance under a broadcast deadline, the reply is drafted in Outlook, cited to the clause."},{"uri":"workspace://assets/bd7c6385017e.mp3","dur":7.158,"text":"And Vault reviews every agreement at once, so consent and termination rights come back flagged in one table."},{"uri":"workspace://assets/b2515f2dbea2.mp3","dur":3.971,"text":"Marcus will walk your team through it on Tuesday the twenty-fifth."}],"captions":["Halcyon Media’s rights team clears about 3,000 talent and music agreements a year. Here is that work in Quillon.","Ask one question across a whole matter, and Quillon reads every agreement in the Vault before it answers.","When a producer emails for a clearance under a broadcast deadline, the reply is drafted in Outlook, cited to the clause.","And Vault reviews every agreement at once, so consent and termination rights come back flagged in one table.","Marcus will walk your team through it on Tuesday the 25th."]};
 // Quillon film engine: ONE `edit` turns a script into a finished, timed film page.
-// Usage: prepend `const SCRIPT = {...};` (see engine/README.md) and run the whole file as the body of
+// Usage: prepend `const SCRIPT = {...};` (engine/make-script.mjs does it; see REPRODUCE.md §4) and run the whole file as the body of
 // one codesign `edit` on an empty design (after `import({ title })`). Returns the QA report as text.
 // Replaces Harvey's ~750-line JS film engine (camera, transitions, captions, pointer clicks, end cards).
 
@@ -52,8 +52,8 @@ beats.forEach((b, i) => {
 const TOTAL = t;
 
 // ---------- 2. page ----------
-engine.scene.create('VerticalStack');
-engine.scene.setMode('Video');
+const scene = await engine.design.create({ type: 'scene' });
+await engine.design.setProps(scene, { scene: { mode: 'Video' } });
 const stack = (await engine.design.findByType('stack'))[0];
 const page = await engine.design.create({ type: 'page', name: 'film', props: { width: W, height: H,
   fill: { type: 'color', color: { value: C.paper } }, playback: { duration: TOTAL } } }, { parent: stack });

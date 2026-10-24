@@ -1,6 +1,6 @@
 const SCRIPT = {"id":"nordvik-bank","account":"Nordvik Bank","ae":"Marcus Lindgren","meeting":"Tue 11 Nov","title":{"eyebrow":"Prepared for Nordvik Bank","headline":"Every facility agreement, held to one playbook.","accent":"one playbook"},"end":{"line":"Quillon for Nordvik Bank’s lending legal team"},"grid":1.2,"music":{"uri":"workspace://assets/2117b3c7a2e2.m4a"},"flows":[{"id":"assistant-cited","category":"Assistant","screen":"s2","label":"Answers cited to the page","detail":{"x":300,"y":120,"w":1280,"h":720},"click":[1300,210],"screenUri":"workspace://assets/8b9bc22e79d6.png"},{"id":"word-redline","category":"Word and Outlook","screen":"s4","label":"Redlines in Word, to your playbook","detail":{"x":160,"y":140,"w":1400,"h":788},"click":[1130,492],"screenUri":"workspace://assets/3c612edb9363.png"},{"id":"playbook-memory","category":"Memory","screen":"s7","label":"Your firm’s positions, remembered","detail":{"x":296,"y":110,"w":1000,"h":563},"click":null,"screenUri":"workspace://assets/0a46219483df.png"}],"vo":[{"uri":"workspace://assets/9e1236903d58.mp3","dur":6.191,"text":"Nordvik Bank’s legal team negotiates more than three hundred facility agreements a year."},{"uri":"workspace://assets/9aa645b27475.mp3","dur":7.314,"text":"Ask Quillon what triggers a change of control across them, and every answer is cited to the page."},{"uri":"workspace://assets/1729eb996429.mp3","dur":7.628,"text":"Redlines in Word follow your positions: fifteen business days to cure, never fewer than ten."},{"uri":"workspace://assets/365c071acb26.mp3","dur":6.844,"text":"Those positions live in your playbook, learned from your own closed deals and reviewed by your team."},{"uri":"workspace://assets/1b67b617b1ab.mp3","dur":3.318,"text":"Marcus will show your team on Tuesday the eleventh."}],"captions":["Nordvik Bank’s legal team negotiates more than 300 facility agreements a year.","Ask Quillon what triggers a change of control across them, and every answer is cited to the page.","Redlines in Word follow your positions: 15 Business Days to cure, never fewer than 10.","Those positions live in your playbook, learned from your own closed deals and reviewed by your team.","Marcus will show your team on Tuesday the eleventh."]};
 // Quillon film engine: ONE `edit` turns a script into a finished, timed film page.
-// Usage: prepend `const SCRIPT = {...};` (see engine/README.md) and run the whole file as the body of
+// Usage: prepend `const SCRIPT = {...};` (engine/make-script.mjs does it; see REPRODUCE.md §4) and run the whole file as the body of
 // one codesign `edit` on an empty design (after `import({ title })`). Returns the QA report as text.
 // Replaces Harvey's ~750-line JS film engine (camera, transitions, captions, pointer clicks, end cards).
 
@@ -52,8 +52,8 @@ beats.forEach((b, i) => {
 const TOTAL = t;
 
 // ---------- 2. page ----------
-engine.scene.create('VerticalStack');
-engine.scene.setMode('Video');
+const scene = await engine.design.create({ type: 'scene' });
+await engine.design.setProps(scene, { scene: { mode: 'Video' } });
 const stack = (await engine.design.findByType('stack'))[0];
 const page = await engine.design.create({ type: 'page', name: 'film', props: { width: W, height: H,
   fill: { type: 'color', color: { value: C.paper } }, playback: { duration: TOTAL } } }, { parent: stack });

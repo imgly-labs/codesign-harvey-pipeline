@@ -1,6 +1,6 @@
 const SCRIPT = {"id":"hallbrook-weir","account":"Hallbrook & Weir","ae":"Dana Whitfield","meeting":"Thu 6 Nov","title":{"eyebrow":"Prepared for Hallbrook & Weir","headline":"2,400 leases a quarter. One review table.","accent":"2,400 leases"},"end":{"line":"Quillon for Hallbrook & Weir’s real estate group"},"grid":1.2,"music":{"uri":"workspace://assets/2117b3c7a2e2.m4a"},"flows":[{"id":"vault-review","category":"Contract work","screen":"s3","label":"Review every document at once","detail":{"x":900,"y":250,"w":690,"h":388},"click":[1290,366],"screenUri":"workspace://assets/01d40f8eb595.png"},{"id":"word-redline","category":"Word and Outlook","screen":"s4","label":"Redlines in Word, to your playbook","detail":{"x":160,"y":140,"w":1400,"h":788},"click":[1130,492],"screenUri":"workspace://assets/3c612edb9363.png"},{"id":"outlook-reply","category":"Word and Outlook","screen":"s6","label":"Replies drafted in Outlook","detail":{"x":900,"y":200,"w":700,"h":394},"click":[1180,502],"screenUri":"workspace://assets/83bca6db8fde.png"}],"vo":[{"uri":"workspace://assets/c9f34ea006ba.mp3","dur":7.236,"text":"Hallbrook and Weir reviews about twenty-four hundred leases a quarter. Here is what that looks like in Quillon."},{"uri":"workspace://assets/337755934e5f.mp3","dur":7.811,"text":"Drop the whole data room into Vault. Every lease is read at once, and change of control comes back flagged."},{"uri":"workspace://assets/a677567d0206.mp3","dur":6.766,"text":"In Word, Quillon redlines to your lender-side playbook, so every associate starts from the same position."},{"uri":"workspace://assets/bb4f57a9cbfe.mp3","dur":6.922,"text":"And when the landlord’s counsel emails, the reply is drafted in Outlook, cited to the lease clause."},{"uri":"workspace://assets/de75f3f7ccd4.mp3","dur":3.553,"text":"Dana will walk your team through it on Thursday the sixth."}],"captions":["Hallbrook & Weir reviews about 2,400 leases a quarter. Here is what that looks like in Quillon.","Drop the whole data room into Vault. Every lease is read at once, and change of control comes back flagged.","In Word, Quillon redlines to your lender-side playbook, so every associate starts from the same position.","And when the landlord’s counsel emails, the reply is drafted in Outlook, cited to the lease clause.","Dana will walk your team through it on Thursday the sixth."]};
 // Quillon film engine: ONE `edit` turns a script into a finished, timed film page.
-// Usage: prepend `const SCRIPT = {...};` (see engine/README.md) and run the whole file as the body of
+// Usage: prepend `const SCRIPT = {...};` (engine/make-script.mjs does it; see REPRODUCE.md §4) and run the whole file as the body of
 // one codesign `edit` on an empty design (after `import({ title })`). Returns the QA report as text.
 // Replaces Harvey's ~750-line JS film engine (camera, transitions, captions, pointer clicks, end cards).
 
@@ -52,8 +52,8 @@ beats.forEach((b, i) => {
 const TOTAL = t;
 
 // ---------- 2. page ----------
-engine.scene.create('VerticalStack');
-engine.scene.setMode('Video');
+const scene = await engine.design.create({ type: 'scene' });
+await engine.design.setProps(scene, { scene: { mode: 'Video' } });
 const stack = (await engine.design.findByType('stack'))[0];
 const page = await engine.design.create({ type: 'page', name: 'film', props: { width: W, height: H,
   fill: { type: 'color', color: { value: C.paper } }, playback: { duration: TOTAL } } }, { parent: stack });

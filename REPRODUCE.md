@@ -12,6 +12,9 @@ it on your machine from the same inputs.
   claude plugin install codesign@imgly-codesign
   ```
 
+  The scripts are tested on plugin **0.5.1** (the version shows in the skills path,
+  `~/.claude/plugins/cache/imgly-codesign/codesign/<version>/`).
+
 - `git` with [Git LFS](https://git-lfs.com).
 - Network access: fonts (Inter, Fraunces) are fetched by family name while building.
 - Node 20+ only for step 4 (the helper scripts in `engine/`).
@@ -55,7 +58,9 @@ Then ask:
 > Use the CoDesign `asset_add` tool on every file in `assets/` (absolute paths), several calls in parallel. Check that
 > each returned uri ends in the file's own name.
 
-That takes about a minute. To load only what one film needs, list its inputs with
+After the first `asset_add`, check that the file appeared in `/tmp/codesign-harvey/assets/`: that proves the
+empty workspace is in use. CoDesign also writes one thumbnail per PNG, so the folder ends up with 95 files; that is
+expected. The whole step takes about a minute. To load only what one film needs, list its inputs with
 `grep -o 'workspace://assets/[^"]*' build/nordvik-bank-edit.js | sort -u` (9 files for Nordvik Bank).
 
 ## 3. Rebuild an account film
@@ -66,13 +71,14 @@ moves, pointer, captions, voice, music) and returns a QA report. Ask:
 > Load the `codesign:handbook` skill. Then `import({ title: 'Nordvik Bank' })`, run the contents of
 > `build/nordvik-bank-edit.js` as a single `edit`, preview it at 2 s, 15 s and 40 s, and export it with
 > `export({ format: 'mp4', blockId: <page from the QA report>, outPath: '<absolute path to this repo>/films/nordvik-bank/rebuilt.mp4' })`.
-> Optionally save the editable design with `export({ format: 'imgly' })`.
+> Optionally save the editable design with `export({ format: 'imgly' })`. The edit result lists two lint notes; ignore
+> them and do not change the film.
 
 What you should see:
 
 - **QA report** (the edit's return value): `duration: 43.2`, five beats, `flags: []`. Any flag (small type, clipped
   text, stray pointer, voice overrun) means something differs from our run.
-- **Export:** `duration` 43.2 and `audioDuration` 43.2, as in `films/nordvik-bank/STATUS.md`. About 37 MB.
+- **Export:** `duration` 43.2 and `audioDuration` 43.2, as in `films/nordvik-bank/STATUS.md`. About 30 MB (the size varies with the encoder).
 - **Frames:** 2 s is the title card ("Prepared for Nordvik Bank"), 15 s a punch-in on the cited answer with the
   pointer, 40 s the end card with the meeting line.
 - **Expected notices, harmless:** a lint note that the media layer extends beyond the page (the punch-ins zoom past
@@ -96,8 +102,12 @@ sessions as you like.
 
 ## 5. The launch film, blog graphics and explainer
 
-- **Launch film:** `films/launch/build/README.md` lists the edits in order (storyboard, screens, beat map, the one
-  film edit, fixes, contact sheet, outros).
+- **Launch film:** in one design, run `films/launch/build/03-music.js` (the page with the music bed), then
+  `films/launch/build/05-film.js` (the whole film), and export the `film` page as mp4: 52.8 s. The
+  shipped `quillon-briefs-launch.mp4` also carries the small fixes from step 06 of the build log, made by hand after
+  the judge pass.
+  `films/launch/build/README.md` lists every edit we made along the way (storyboard, screens, beat map, fixes,
+  contact sheet, outros).
 - **Blog graphics:** `blog/requests.md` and `blog/replies.md` are the requests and answers; the `.imgly` files are the
   editable results and `blog/templates.imgly` is the template library.
 - **Explainer:** `explainer/explainer.imgly` is the editable source of `explainer.mp4`. Open it with
@@ -105,5 +115,8 @@ sessions as you like.
 
 Any `.imgly` file here opens the same way.
 
-**Versions:** the films were built with the CoDesign plugin 0.4.3 (CE.SDK engine 1.83.0) and rebuilt with VERIFIED_STABLE. Rebuilt videos match in content and timing; they are not byte-identical,
+**Versions:** the films were first built with the CoDesign plugin 0.4.3; the scripts here are updated for and
+verified on 0.5.1.
+
+Rebuilt videos match in content and timing; they are not byte-identical,
 because the fonts are looked up by family name and the encoder output varies.

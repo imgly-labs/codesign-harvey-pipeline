@@ -37,7 +37,7 @@ const chrome = (p, matter, crumb) => [
   T(`${p}/crumb`, crumb, { size: 16, color: C.graphite, x: 328, y: 132 })
 ];
 
-const stack = (await engine.design.findByType('stack'))[0] || (engine.scene.create('VerticalStack'), (await engine.design.findByType('stack'))[0]);
+const stack = (await engine.design.findByType('stack'))[0] || (await engine.design.create({ type: 'scene' }), (await engine.design.findByType('stack'))[0]);
 for (const n of ['s8-brief', 's9-briefs']) for (const old of await engine.design.findByName(n)) await engine.design.destroy(old);
 
 // ---------- s8: the Brief — a finished client alert, every sentence cited ----------

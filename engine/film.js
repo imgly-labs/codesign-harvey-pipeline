@@ -1,5 +1,5 @@
 // Quillon film engine: ONE `edit` turns a script into a finished, timed film page.
-// Usage: prepend `const SCRIPT = {...};` (see engine/README.md) and run the whole file as the body of
+// Usage: prepend `const SCRIPT = {...};` (engine/make-script.mjs does it; see REPRODUCE.md §4) and run the whole file as the body of
 // one codesign `edit` on an empty design (after `import({ title })`). Returns the QA report as text.
 // Replaces Harvey's ~750-line JS film engine (camera, transitions, captions, pointer clicks, end cards).
 
@@ -51,8 +51,8 @@ beats.forEach((b, i) => {
 const TOTAL = t;
 
 // ---------- 2. page ----------
-engine.scene.create('VerticalStack');
-engine.scene.setMode('Video');
+const scene = await engine.design.create({ type: 'scene' });
+await engine.design.setProps(scene, { scene: { mode: 'Video' } });
 const stack = (await engine.design.findByType('stack'))[0];
 const page = await engine.design.create({ type: 'page', name: 'film', props: { width: W, height: H,
   fill: { type: 'color', color: { value: C.paper } }, playback: { duration: TOTAL } } }, { parent: stack });

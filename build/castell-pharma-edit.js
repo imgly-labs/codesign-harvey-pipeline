@@ -1,6 +1,6 @@
 const SCRIPT = {"id":"castell-pharma","account":"Castell Pharma","ae":"Priya Raman","meeting":"Wed 12 Nov","title":{"eyebrow":"Prepared for Castell Pharma","headline":"Forty thousand exhibits. One chronology.","accent":"One chronology"},"end":{"line":"Quillon for Castell Pharma’s litigation team"},"grid":1.2,"music":{"uri":"workspace://assets/2117b3c7a2e2.m4a"},"flows":[{"id":"chronology","category":"Litigation","screen":"s5","label":"Chronologies from the exhibits","detail":{"x":300,"y":330,"w":860,"h":484},"click":[592,712],"screenUri":"workspace://assets/4571516a8610.png"},{"id":"assistant-cited","category":"Assistant","screen":"s2","label":"Answers cited to the page","detail":{"x":300,"y":120,"w":1280,"h":720},"click":[1300,210],"screenUri":"workspace://assets/8b9bc22e79d6.png"},{"id":"outlook-reply","category":"Word and Outlook","screen":"s6","label":"Replies drafted in Outlook","detail":{"x":900,"y":200,"w":700,"h":394},"click":[1180,502],"screenUri":"workspace://assets/83bca6db8fde.png"}],"vo":[{"uri":"workspace://assets/8a76d5ab8ac9.mp3","dur":5.407,"text":"Castell Pharma’s litigation team works across more than forty thousand exhibits."},{"uri":"workspace://assets/79ee3fdfb76a.mp3","dur":5.486,"text":"Quillon builds the chronology from them, and every event links back to its exhibit."},{"uri":"workspace://assets/801450ef1020.mp3","dur":4.833,"text":"Ask a question for the board, and the answer cites the exact page it came from."},{"uri":"workspace://assets/cbbf156e3dd5.mp3","dur":5.799,"text":"Then reply to outside counsel from Outlook, with the sources already attached."},{"uri":"workspace://assets/2f9aa8666165.mp3","dur":3.866,"text":"Priya will walk your team through it on Wednesday the twelfth."}],"captions":["Castell Pharma’s litigation team works across more than 40,000 exhibits.","Quillon builds the chronology from them, and every event links back to its exhibit.","Ask a question for the board, and the answer cites the exact page it came from.","Then reply to outside counsel from Outlook, with the sources already attached.","Priya will walk your team through it on Wednesday the twelfth."]};
 // Quillon film engine: ONE `edit` turns a script into a finished, timed film page.
-// Usage: prepend `const SCRIPT = {...};` (see engine/README.md) and run the whole file as the body of
+// Usage: prepend `const SCRIPT = {...};` (engine/make-script.mjs does it; see REPRODUCE.md §4) and run the whole file as the body of
 // one codesign `edit` on an empty design (after `import({ title })`). Returns the QA report as text.
 // Replaces Harvey's ~750-line JS film engine (camera, transitions, captions, pointer clicks, end cards).
 
@@ -52,8 +52,8 @@ beats.forEach((b, i) => {
 const TOTAL = t;
 
 // ---------- 2. page ----------
-engine.scene.create('VerticalStack');
-engine.scene.setMode('Video');
+const scene = await engine.design.create({ type: 'scene' });
+await engine.design.setProps(scene, { scene: { mode: 'Video' } });
 const stack = (await engine.design.findByType('stack'))[0];
 const page = await engine.design.create({ type: 'page', name: 'film', props: { width: W, height: H,
   fill: { type: 'color', color: { value: C.paper } }, playback: { duration: TOTAL } } }, { parent: stack });

@@ -1,6 +1,6 @@
 const SCRIPT = {"id":"pelham-grant","account":"Pelham Grant","ae":"Priya Raman","meeting":"Tue 18 Nov","title":{"eyebrow":"Prepared for Pelham Grant","headline":"200,000 documents. Answers in days.","accent":"Answers in days"},"end":{"line":"Quillon for Pelham Grant’s litigation team"},"grid":1.2,"music":{"uri":"workspace://assets/2117b3c7a2e2.m4a"},"flows":[{"id":"chronology","category":"Litigation","screen":"s5","label":"Chronologies from the exhibits","detail":{"x":300,"y":330,"w":860,"h":484},"click":[592,712],"screenUri":"workspace://assets/4571516a8610.png"},{"id":"assistant-cited","category":"Assistant","screen":"s2","label":"Answers cited to the page","detail":{"x":300,"y":120,"w":1280,"h":720},"click":[1300,210],"screenUri":"workspace://assets/8b9bc22e79d6.png"},{"id":"playbook-memory","category":"Memory","screen":"s7","label":"Your firm’s positions, remembered","detail":{"x":296,"y":110,"w":1000,"h":563},"click":null,"screenUri":"workspace://assets/0a46219483df.png"}],"vo":[{"uri":"workspace://assets/950d2f29267f.mp3","dur":6.922,"text":"Pelham Grant’s twenty-two litigators run disclosure reviews of up to two hundred thousand documents."},{"uri":"workspace://assets/61dba75355f8.mp3","dur":6.922,"text":"Quillon builds the witness chronology from the exhibits, and every event links back to its source document."},{"uri":"workspace://assets/969dee779dfc.mp3","dur":6.113,"text":"Ask a first-pass merits question, and the answer comes back cited to the exact page."},{"uri":"workspace://assets/f604dccf9c43.mp3","dur":5.956,"text":"Your positions are kept in the playbook, learned from closed matters and reviewed by a partner."},{"uri":"workspace://assets/a4501152db26.mp3","dur":3.788,"text":"Priya will walk your team through it on Tuesday the eighteenth."}],"captions":["Pelham Grant’s 22 litigators run disclosure reviews of up to 200,000 documents.","Quillon builds the witness chronology from the exhibits, and every event links back to its source document.","Ask a first-pass merits question, and the answer comes back cited to the exact page.","Your positions are kept in the playbook, learned from closed matters and reviewed by a partner.","Priya will walk your team through it on Tuesday the eighteenth."]};
 // Quillon film engine: ONE `edit` turns a script into a finished, timed film page.
-// Usage: prepend `const SCRIPT = {...};` (see engine/README.md) and run the whole file as the body of
+// Usage: prepend `const SCRIPT = {...};` (engine/make-script.mjs does it; see REPRODUCE.md §4) and run the whole file as the body of
 // one codesign `edit` on an empty design (after `import({ title })`). Returns the QA report as text.
 // Replaces Harvey's ~750-line JS film engine (camera, transitions, captions, pointer clicks, end cards).
 
@@ -52,8 +52,8 @@ beats.forEach((b, i) => {
 const TOTAL = t;
 
 // ---------- 2. page ----------
-engine.scene.create('VerticalStack');
-engine.scene.setMode('Video');
+const scene = await engine.design.create({ type: 'scene' });
+await engine.design.setProps(scene, { scene: { mode: 'Video' } });
 const stack = (await engine.design.findByType('stack'))[0];
 const page = await engine.design.create({ type: 'page', name: 'film', props: { width: W, height: H,
   fill: { type: 'color', color: { value: C.paper } }, playback: { duration: TOTAL } } }, { parent: stack });

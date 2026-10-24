@@ -1,6 +1,6 @@
 const SCRIPT = {"id":"brightmoor-energy","account":"Brightmoor Energy","ae":"Marcus Lindgren","meeting":"Fri 14 Nov","title":{"eyebrow":"Prepared for Brightmoor Energy","headline":"Three disputes. Nine hundred contracts.","accent":"Nine hundred contracts"},"end":{"line":"Quillon for Brightmoor Energy’s legal team"},"grid":1.2,"music":{"uri":"workspace://assets/2117b3c7a2e2.m4a"},"flows":[{"id":"chronology","category":"Litigation","screen":"s5","label":"Chronologies from the exhibits","detail":{"x":300,"y":330,"w":860,"h":484},"click":[592,712],"screenUri":"workspace://assets/4571516a8610.png"},{"id":"vault-review","category":"Contract work","screen":"s3","label":"Review every document at once","detail":{"x":900,"y":250,"w":690,"h":388},"click":[1290,366],"screenUri":"workspace://assets/01d40f8eb595.png"},{"id":"word-redline","category":"Word and Outlook","screen":"s4","label":"Redlines in Word, to your playbook","detail":{"x":160,"y":140,"w":1400,"h":788},"click":[1130,492],"screenUri":"workspace://assets/3c612edb9363.png"}],"vo":[{"uri":"workspace://assets/1bc0b98283fb.mp3","dur":5.721,"text":"Brightmoor Energy has three contractor disputes running across nine hundred contracts."},{"uri":"workspace://assets/cbf8da9822a7.mp3","dur":5.878,"text":"Quillon builds each dispute’s chronology from the record, with every event cited."},{"uri":"workspace://assets/9931a6e3205f.mp3","dur":5.146,"text":"Vault reviews all nine hundred contracts at once for the clauses that matter."},{"uri":"workspace://assets/25d1f673d05c.mp3","dur":4.911,"text":"And variations get redlined in Word to your standard positions."},{"uri":"workspace://assets/a20620934f67.mp3","dur":3.474,"text":"Marcus will walk your team through it on Friday the fourteenth."}],"captions":["Brightmoor Energy has three contractor disputes running across 900 contracts.","Quillon builds each dispute’s chronology from the record, with every event cited.","Vault reviews all 900 contracts at once for the clauses that matter.","And variations get redlined in Word to your standard positions.","Marcus will walk your team through it on Friday the fourteenth."]};
 // Quillon film engine: ONE `edit` turns a script into a finished, timed film page.
-// Usage: prepend `const SCRIPT = {...};` (see engine/README.md) and run the whole file as the body of
+// Usage: prepend `const SCRIPT = {...};` (engine/make-script.mjs does it; see REPRODUCE.md §4) and run the whole file as the body of
 // one codesign `edit` on an empty design (after `import({ title })`). Returns the QA report as text.
 // Replaces Harvey's ~750-line JS film engine (camera, transitions, captions, pointer clicks, end cards).
 
@@ -52,8 +52,8 @@ beats.forEach((b, i) => {
 const TOTAL = t;
 
 // ---------- 2. page ----------
-engine.scene.create('VerticalStack');
-engine.scene.setMode('Video');
+const scene = await engine.design.create({ type: 'scene' });
+await engine.design.setProps(scene, { scene: { mode: 'Video' } });
 const stack = (await engine.design.findByType('stack'))[0];
 const page = await engine.design.create({ type: 'page', name: 'film', props: { width: W, height: H,
   fill: { type: 'color', color: { value: C.paper } }, playback: { duration: TOTAL } } }, { parent: stack });

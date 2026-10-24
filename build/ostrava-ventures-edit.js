@@ -1,6 +1,6 @@
 const SCRIPT = {"id":"ostrava-ventures","account":"Ostrava Ventures","ae":"Dana Whitfield","meeting":"Mon 10 Nov","title":{"eyebrow":"Prepared for Ostrava Ventures","headline":"Sixty portfolio companies. Three lawyers.","accent":"Three lawyers"},"end":{"line":"Quillon for Ostrava Ventures’ legal team"},"grid":1.2,"music":{"uri":"workspace://assets/2117b3c7a2e2.m4a"},"flows":[{"id":"assistant-ask","category":"Assistant","screen":"s1","label":"Ask across a whole matter","detail":{"x":480,"y":200,"w":1120,"h":630},"click":[1440,458],"screenUri":"workspace://assets/d6251a9c5df8.png"},{"id":"vault-review","category":"Contract work","screen":"s3","label":"Review every document at once","detail":{"x":900,"y":250,"w":690,"h":388},"click":[1290,366],"screenUri":"workspace://assets/01d40f8eb595.png"},{"id":"playbook-memory","category":"Memory","screen":"s7","label":"Your firm’s positions, remembered","detail":{"x":296,"y":110,"w":1000,"h":563},"click":null,"screenUri":"workspace://assets/0a46219483df.png"}],"vo":[{"uri":"workspace://assets/204c079fec4b.mp3","dur":5.878,"text":"Ostrava Ventures covers sixty portfolio companies with a legal team of three."},{"uri":"workspace://assets/63ff61b1f823.mp3","dur":5.956,"text":"Ask one question across every shareholder agreement in a matter, not one file at a time."},{"uri":"workspace://assets/6f20dbb21d87.mp3","dur":4.989,"text":"Vault reads every side letter at once and lines up the terms that differ."},{"uri":"workspace://assets/a0cfa170998a.mp3","dur":5.721,"text":"And your fund’s positions are remembered, so the next deal starts where the last one ended."},{"uri":"workspace://assets/3d3fac98ffc4.mp3","dur":2.769,"text":"Dana will show your team on Monday the tenth."}],"captions":["Ostrava Ventures covers 60 portfolio companies with a legal team of three.","Ask one question across every shareholder agreement in a matter, not one file at a time.","Vault reads every side letter at once and lines up the terms that differ.","And your fund’s positions are remembered, so the next deal starts where the last one ended.","Dana will show your team on Monday the tenth."]};
 // Quillon film engine: ONE `edit` turns a script into a finished, timed film page.
-// Usage: prepend `const SCRIPT = {...};` (see engine/README.md) and run the whole file as the body of
+// Usage: prepend `const SCRIPT = {...};` (engine/make-script.mjs does it; see REPRODUCE.md §4) and run the whole file as the body of
 // one codesign `edit` on an empty design (after `import({ title })`). Returns the QA report as text.
 // Replaces Harvey's ~750-line JS film engine (camera, transitions, captions, pointer clicks, end cards).
 
@@ -52,8 +52,8 @@ beats.forEach((b, i) => {
 const TOTAL = t;
 
 // ---------- 2. page ----------
-engine.scene.create('VerticalStack');
-engine.scene.setMode('Video');
+const scene = await engine.design.create({ type: 'scene' });
+await engine.design.setProps(scene, { scene: { mode: 'Video' } });
 const stack = (await engine.design.findByType('stack'))[0];
 const page = await engine.design.create({ type: 'page', name: 'film', props: { width: W, height: H,
   fill: { type: 'color', color: { value: C.paper } }, playback: { duration: TOTAL } } }, { parent: stack });

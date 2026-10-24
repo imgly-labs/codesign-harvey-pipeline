@@ -58,7 +58,7 @@ const ONLY = globalThis.ONLY || BEATS.map((b) => b.n);
 const TOTAL = BEATS[BEATS.length - 1].end;
 
 let stack = (await engine.design.findByType('stack'))[0];
-if (!stack) { engine.scene.create('VerticalStack'); stack = (await engine.design.findByType('stack'))[0]; }
+if (!stack) { await engine.design.create({ type: 'scene' }); stack = (await engine.design.findByType('stack'))[0]; }
 const made = [];
 for (const b of BEATS.filter((x) => ONLY.includes(x.n))) {
   const p = `sb${b.n}`;

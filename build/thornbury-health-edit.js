@@ -1,6 +1,6 @@
 const SCRIPT = {"id":"thornbury-health","account":"Thornbury Health Trust","ae":"Dana Whitfield","meeting":"Mon 24 Nov","title":{"eyebrow":"Prepared for Thornbury Health Trust","headline":"800 contracts. Six lawyers. One Vault.","accent":"800 contracts"},"end":{"line":"Quillon for Thornbury Health Trust’s legal team"},"grid":1.2,"music":{"uri":"workspace://assets/2117b3c7a2e2.m4a"},"flows":[{"id":"vault-review","category":"Contract work","screen":"s3","label":"Review every document at once","detail":{"x":900,"y":250,"w":690,"h":388},"click":[1290,366],"screenUri":"workspace://assets/01d40f8eb595.png"},{"id":"chronology","category":"Litigation","screen":"s5","label":"Chronologies from the exhibits","detail":{"x":300,"y":330,"w":860,"h":484},"click":[592,712],"screenUri":"workspace://assets/4571516a8610.png"},{"id":"outlook-reply","category":"Word and Outlook","screen":"s6","label":"Replies drafted in Outlook","detail":{"x":900,"y":200,"w":700,"h":394},"click":[1180,502],"screenUri":"workspace://assets/83bca6db8fde.png"}],"vo":[{"uri":"workspace://assets/69af55857519.mp3","dur":8.046,"text":"Thornbury Health Trust has six lawyers for eight hundred estate and service contracts. Here is that work in Quillon."},{"uri":"workspace://assets/55f1b28fcdd9.mp3","dur":8.986,"text":"Drop the contracts into Vault. Every document is read at once, and consent and change of control clauses come back flagged."},{"uri":"workspace://assets/d4ef668fa955.mp3","dur":7.706,"text":"For a clinical claims file, Quillon builds the chronology from the exhibits, and every event is cited to its exhibit."},{"uri":"workspace://assets/954bfb0ffca6.mp3","dur":8.908,"text":"When a clinician or estates manager emails a question, the reply is drafted in Outlook, cited to the contract clause."},{"uri":"workspace://assets/b4cb45ef3ada.mp3","dur":3.788,"text":"Dana will walk your team through it on Monday the twenty-fourth."}],"captions":["Thornbury Health Trust has six lawyers for 800 estate and service contracts. Here is that work in Quillon.","Drop the contracts into Vault. Every document is read at once, and consent and change-of-control clauses come back flagged.","For a clinical claims file, Quillon builds the chronology from the exhibits, and every event is cited to its exhibit.","When a clinician or estates manager emails a question, the reply is drafted in Outlook, cited to the contract clause.","Dana will walk your team through it on Monday the 24th."]};
 // Quillon film engine: ONE `edit` turns a script into a finished, timed film page.
-// Usage: prepend `const SCRIPT = {...};` (see engine/README.md) and run the whole file as the body of
+// Usage: prepend `const SCRIPT = {...};` (engine/make-script.mjs does it; see REPRODUCE.md §4) and run the whole file as the body of
 // one codesign `edit` on an empty design (after `import({ title })`). Returns the QA report as text.
 // Replaces Harvey's ~750-line JS film engine (camera, transitions, captions, pointer clicks, end cards).
 
@@ -52,8 +52,8 @@ beats.forEach((b, i) => {
 const TOTAL = t;
 
 // ---------- 2. page ----------
-engine.scene.create('VerticalStack');
-engine.scene.setMode('Video');
+const scene = await engine.design.create({ type: 'scene' });
+await engine.design.setProps(scene, { scene: { mode: 'Video' } });
 const stack = (await engine.design.findByType('stack'))[0];
 const page = await engine.design.create({ type: 'page', name: 'film', props: { width: W, height: H,
   fill: { type: 'color', color: { value: C.paper } }, playback: { duration: TOTAL } } }, { parent: stack });

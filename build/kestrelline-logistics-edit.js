@@ -1,6 +1,6 @@
 const SCRIPT = {"id":"kestrelline-logistics","account":"Kestrelline Logistics","ae":"Dana Whitfield","meeting":"Wed 19 Nov","title":{"eyebrow":"Prepared for Kestrelline Logistics","headline":"1,100 supplier contracts. Fourteen countries.","accent":"1,100 supplier contracts"},"end":{"line":"Quillon for Kestrelline Logistics’ procurement legal team"},"grid":1.2,"music":{"uri":"workspace://assets/2117b3c7a2e2.m4a"},"flows":[{"id":"vault-review","category":"Contract work","screen":"s3","label":"Review every document at once","detail":{"x":900,"y":250,"w":690,"h":388},"click":[1290,366],"screenUri":"workspace://assets/01d40f8eb595.png"},{"id":"outlook-reply","category":"Word and Outlook","screen":"s6","label":"Replies drafted in Outlook","detail":{"x":900,"y":200,"w":700,"h":394},"click":[1180,502],"screenUri":"workspace://assets/83bca6db8fde.png"},{"id":"playbook-memory","category":"Memory","screen":"s7","label":"Your firm’s positions, remembered","detail":{"x":296,"y":110,"w":1000,"h":563},"click":null,"screenUri":"workspace://assets/0a46219483df.png"}],"vo":[{"uri":"workspace://assets/09fe0a2017dd.mp3","dur":8.046,"text":"Kestrelline Logistics holds eleven hundred supplier contracts across fourteen countries. Here is that work in Quillon."},{"uri":"workspace://assets/de77565fdc92.mp3","dur":9.091,"text":"Vault reads all eleven hundred contracts at once, and every assignment and change of control clause lands in one table."},{"uri":"workspace://assets/49cd3540eea6.mp3","dur":8.124,"text":"When procurement sends one of its sixty questions a week, the reply is drafted in Outlook, cited to the contract clause."},{"uri":"workspace://assets/a3bbd50ad3e0.mp3","dur":7.001,"text":"And the positions in your forty-page standards document are remembered, so every answer starts from them."},{"uri":"workspace://assets/2f74bb21d052.mp3","dur":3.866,"text":"Dana will walk your team through it on Wednesday the nineteenth."}],"captions":["Kestrelline Logistics holds 1,100 supplier contracts across 14 countries. Here is that work in Quillon.","Vault reads all 1,100 contracts at once, and every assignment and change of control clause lands in one table.","When procurement sends one of its 60 questions a week, the reply is drafted in Outlook, cited to the contract clause.","And the positions in your 40-page standards document are remembered, so every answer starts from them.","Dana will walk your team through it on Wednesday the 19th."]};
 // Quillon film engine: ONE `edit` turns a script into a finished, timed film page.
-// Usage: prepend `const SCRIPT = {...};` (see engine/README.md) and run the whole file as the body of
+// Usage: prepend `const SCRIPT = {...};` (engine/make-script.mjs does it; see REPRODUCE.md §4) and run the whole file as the body of
 // one codesign `edit` on an empty design (after `import({ title })`). Returns the QA report as text.
 // Replaces Harvey's ~750-line JS film engine (camera, transitions, captions, pointer clicks, end cards).
 
@@ -52,8 +52,8 @@ beats.forEach((b, i) => {
 const TOTAL = t;
 
 // ---------- 2. page ----------
-engine.scene.create('VerticalStack');
-engine.scene.setMode('Video');
+const scene = await engine.design.create({ type: 'scene' });
+await engine.design.setProps(scene, { scene: { mode: 'Video' } });
 const stack = (await engine.design.findByType('stack'))[0];
 const page = await engine.design.create({ type: 'page', name: 'film', props: { width: W, height: H,
   fill: { type: 'color', color: { value: C.paper } }, playback: { duration: TOTAL } } }, { parent: stack });
@@ -137,7 +137,7 @@ for (const [i, b] of beats.entries()) {
     txt(`b${i}/line`, e.line, { size: 34, color: C.mist, x: 0, y: 0, w: 1400, align: 'Center',
       time: { timeOffset: 1.0, duration: b.len - 1.0 }, anim: { in: { type: 'fade', duration: 0.6, easing: 'EaseOut' } } }),
     txt(`b${i}/cta`, `Walkthrough with ${SCRIPT.ae} · ${SCRIPT.meeting}`, { size: 30, weight: 'semiBold', color: C.white, x: 0, y: 0, bg: C.seal, px: 28, py: 14, bgr: 12,
-      time: { timeOffset: 1.6, duration: b.len - 1.6 }, anim: { in: { type: 'slide', duration: 0.6, easing: 'EaseOutQuint', slide: { direction: 1.5708, fade: true } } } })
+      time: { timeOffset: 1.6, duration: b.len - 1.6 }, anim: { in: { type: 'fade', duration: 0.6, easing: 'EaseOut' } } }) // slide moves the glyphs but not the text background (CoDesign gap)
   ] }, words);
   // centre the lockup + lines by measurement
   const m = async (n) => engine.design.measure((await engine.design.findByName(n))[0]);
